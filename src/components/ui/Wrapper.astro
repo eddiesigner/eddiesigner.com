@@ -1,0 +1,30 @@
+<div class="max-wrapper">
+  <slot />
+</div>
+
+<style>
+  .max-wrapper {
+    --padding: 20px;
+    max-width: var(--max-width);
+    padding-inline: var(--padding);
+    margin: 0 auto;
+  }
+
+  @media (min-width: 720px) {
+    .max-wrapper {
+      --padding: 32px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .max-wrapper {
+      --padding: 64px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .max-wrapper {
+      --padding: 80px;
+    }
+  }
+</style>

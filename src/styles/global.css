@@ -1,3 +1,9 @@
+/* === VARIABLES === */
+
+:root {
+  --max-width: 1568px;
+}
+
 /* === THEME === */
 
 :root {
@@ -29,6 +35,19 @@ body {
     sans-serif;
 }
 
+/* === GLOBAL === */
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 /* === UTILS === */
 
 .sr-only {
@@ -46,6 +65,12 @@ body {
   /* modern browsers, clip-path works inwards from each corner */
   clip-path: inset(50%);
   /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
