@@ -20,8 +20,8 @@ const socialLinks = [
   },
 ];
 
-import Wrapper from "../components/ui/Wrapper.astro";
-import Icon from "../components/ui/Icon.astro";
+import Wrapper from "../ui/Wrapper.astro";
+import Icon from "../ui/Icon.astro";
 ---
 
 <footer class="footer">
@@ -53,10 +53,8 @@ import Icon from "../components/ui/Icon.astro";
     --padding: 32px;
     padding-block: var(--padding);
     border-top: 1px solid var(--alt-background);
-  }
 
-  @media (min-width: 1024px) {
-    .footer {
+    @media (min-width: 1024px) {
       --padding: 64px;
     }
   }
@@ -67,10 +65,8 @@ import Icon from "../components/ui/Icon.astro";
     align-items: center;
     justify-content: center;
     gap: 32px;
-  }
 
-  @media (min-width: 1024px) {
-    .footer-wrapper {
+    @media (min-width: 1024px) {
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
@@ -81,19 +77,15 @@ import Icon from "../components/ui/Icon.astro";
     display: flex;
     flex-direction: column;
     gap: 12px;
-  }
 
-  @media (min-width: 720px) {
-    .footer-main {
+    @media (min-width: 720px) {
       flex-direction: row;
       align-items: flex-start;
       justify-content: space-between;
       gap: 64px;
     }
-  }
 
-  @media (min-width: 1024px) {
-    .footer-main {
+    @media (min-width: 1024px) {
       flex: 1;
       min-width: 1px;
     }
@@ -104,10 +96,8 @@ import Icon from "../components/ui/Icon.astro";
     font-weight: 500;
     line-height: 1.5;
     color: var(--light-text);
-  }
 
-  @media (min-width: 1024px) {
-    .footer-info {
+    @media (min-width: 1024px) {
       flex: 1;
       font-size: 1rem;
     }
@@ -119,19 +109,22 @@ import Icon from "../components/ui/Icon.astro";
     align-items: center;
     justify-content: center;
     gap: 24px;
-  }
 
-  .footer-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--light-text);
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-  }
+    & a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light-text);
+      text-decoration: none;
+      transition: color 0.2s ease-in-out;
 
-  .footer-links a:hover,
-  .footer-links a:focus-visible {
-    color: var(--foreground);
+      &:hover {
+        color: var(--foreground);
+      }
+
+      &:focus-visible {
+        color: var(--foreground);
+      }
+    }
   }
 </style>

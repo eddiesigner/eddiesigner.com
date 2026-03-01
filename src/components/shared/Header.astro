@@ -1,0 +1,109 @@
+---
+import Wrapper from "../ui/Wrapper.astro";
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<header class="header">
+  <Wrapper>
+    <div class="header-wrapper">
+      <a href="/" class="header-logo">
+        <img src="/favicon.svg" alt="" />
+        <span>Eduardo Gómez</span>
+      </a>
+      <nav class="header-nav" aria-label="Navigation menu">
+        <HeaderLink href="/">Work</HeaderLink>
+        <HeaderLink href="/labs">Labs</HeaderLink>
+        <HeaderLink href="/explorations">Explorations</HeaderLink>
+        <HeaderLink href="/blog">Blog</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+      </nav>
+    </div>
+  </Wrapper>
+</header>
+
+<style>
+  .header {
+    --height: var(--header-height-mobile);
+    position: sticky;
+    top: 0;
+    height: var(--height);
+    background: var(--transluscent);
+    backdrop-filter: blur(20px);
+
+    @media (min-width: 1024px) {
+      --height: var(--header-height-desktop);
+    }
+  }
+
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+
+    & img {
+      width: 24px;
+      height: 24px;
+    }
+
+    & span {
+      display: none;
+    }
+
+    @media (min-width: 720px) {
+      & span {
+        display: block;
+        color: var(--foreground);
+        line-height: 1.25;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .header-nav {
+    --wrapper-padding: 20px;
+    --height: var(--header-height-mobile);
+    --gap: 16px;
+    height: var(--height);
+    flex: 1;
+    min-width: 1px;
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-inline-end: calc(var(--wrapper-padding) * -1);
+    padding-inline-end: var(--wrapper-padding);
+    padding-inline-start: 32px;
+    mask-image: linear-gradient(to right, transparent, black 32px);
+
+    @media (min-width: 720px) {
+      --wrapper-padding: 32px;
+      justify-content: flex-end;
+    }
+
+    @media (min-width: 1024px) {
+      --height: var(--header-height-desktop);
+      --gap: 24px;
+    }
+
+    @media (min-width: 1280px) {
+      --wrapper-padding: 64px;
+    }
+
+    @media (min-width: 1440px) {
+      --wrapper-padding: 80px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+</style>

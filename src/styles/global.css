@@ -2,6 +2,9 @@
 
 :root {
   --max-width: 1568px;
+  --content-width: 720px;
+  --header-height-mobile: 72px;
+  --header-height-desktop: 80px;
 }
 
 /* === THEME === */
