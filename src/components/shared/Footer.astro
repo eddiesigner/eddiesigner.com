@@ -60,29 +60,34 @@ import Icon from "../ui/Icon.astro";
   }
 
   .footer-wrapper {
+    --flex-direction: column;
+    --justify-content: center;
+    --align-items: center;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: var(--flex-direction);
+    align-items: var(--align-items);
+    justify-content: var(--justify-content);
     gap: 32px;
 
     @media (min-width: 1024px) {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
+      --flex-direction: row;
+      --justify-content: space-between;
+      --align-items: flex-start;
     }
   }
 
   .footer-main {
+    --gap: 12px;
+    --flex-direction: column;
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: var(--flex-direction);
+    gap: var(--gap);
 
     @media (min-width: 720px) {
-      flex-direction: row;
+      --flex-direction: row;
+      --gap: 64px;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 64px;
     }
 
     @media (min-width: 1024px) {
@@ -92,14 +97,15 @@ import Icon from "../ui/Icon.astro";
   }
 
   .footer-info {
-    font-size: 0.875rem;
+    --font-size: 0.875rem;
+    font-size: var(--font-size);
     font-weight: 500;
     line-height: 1.5;
     color: var(--light-text);
 
     @media (min-width: 1024px) {
       flex: 1;
-      font-size: 1rem;
+      --font-size: 1rem;
     }
   }
 

@@ -18,6 +18,8 @@ import Icon from "./Icon.astro";
 
 <style>
   .button {
+    --font-size: 1.125rem;
+    --padding: 16px 24px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -27,17 +29,21 @@ import Icon from "./Icon.astro";
     cursor: pointer;
     color: var(--background);
     line-height: 1.2;
-    font-size: 1.125rem;
+    font-size: var(--font-size);
     border-radius: 100px;
-    padding: 16px 24px;
-    background-image: linear-gradient(to right, var(--accent) 50%, var(--foreground) 50%);
+    padding: var(--padding);
+    background-image: linear-gradient(
+      to right,
+      var(--accent) 50%,
+      var(--foreground) 50%
+    );
     background-size: 200% 100%;
     background-position: right center;
     transition: background-position 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     @media (min-width: 1024px) {
-      font-size: 1.5rem;
-      padding: 24px 40px;
+      --font-size: 1.5rem;
+      --padding: 24px 40px;
     }
 
     &:hover {
