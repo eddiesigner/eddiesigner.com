@@ -1,0 +1,143 @@
+---
+
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1 class="hero-title fade-up-animation">
+        I'm Eduardo.<br />
+        Engineer & Designer.
+      </h1>
+      <p class="hero-description fade-up-animation">
+        I have a keen eye for creating usable and engaging user interfaces that
+        I then bring to reality through code.
+      </p>
+    </div>
+    <div class="hero-avatar-wrapper fade-up-animation">
+      <img
+        class="hero-avatar"
+        src="/img/avatar.png"
+        alt="Eduardo Gómez's avatar"
+        width="200"
+        height="200"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    --padding-block: 48px;
+    padding-block: var(--padding-block);
+
+    @media (min-width: 1024px) {
+      --padding-block: 124px;
+    }
+  }
+
+  .hero-inner {
+    --avatar-size: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    max-width: 1024px;
+    margin-inline: auto;
+
+    @media (min-width: 720px) {
+      grid-template-columns: 1fr calc(var(--avatar-size) / 2);
+      align-items: start;
+    }
+  }
+
+  .hero-content {
+    --padding: 64px;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-block-start: var(--padding);
+    position: relative;
+    z-index: 2;
+
+    @media (min-width: 720px) {
+      --padding: 96px;
+    }
+  }
+
+  .hero-title {
+    font-size: clamp(4rem, 5vw + 2rem, 6.5rem);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--accent);
+  }
+
+  .hero-description {
+    --font-size: 1.125rem;
+    font-size: var(--font-size);
+    font-weight: 500;
+    line-height: 1.6;
+    animation-delay: 0.75s;
+
+    @media (min-width: 720px) {
+      --font-size: 1.5rem;
+      line-height: 1.5;
+      max-width: 760px;
+    }
+  }
+
+  .hero-avatar-wrapper {
+    --size: 150px;
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
+    border-radius: var(--size);
+    animation-delay: 1s;
+    background-color: var(--alt-background);
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: 720px) {
+      --size: var(--avatar-size);
+      grid-column: 2 / -1;
+    }
+  }
+
+  .hero-avatar {
+    --size: 112.5px;
+    width: var(--size);
+    height: var(--size);
+    transform: scale(0);
+    animation: memojiAnimation 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1.25s
+      forwards;
+
+    @media (min-width: 1024px) {
+      --size: 150px;
+    }
+  }
+
+  @keyframes memojiAnimation {
+    0% {
+      transform: scale(0);
+    }
+    10% {
+      transform: scale(1.1, 0.9);
+    }
+    30% {
+      transform: scale(0.9, 1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+</style>

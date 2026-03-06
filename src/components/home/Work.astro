@@ -1,0 +1,134 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+const workEntries = await getCollection("work");
+const sortedWork = workEntries.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<section class="work">
+  <h2 class="work-title">Featured Projects</h2>
+  <div class="work-grid">
+    {
+      sortedWork.map((entry) => (
+        <article class="work-card">
+          <a href={entry.data.url} class="work-card-image-link">
+            <Image
+              class="work-card-image"
+              src={entry.data.heroImage}
+              alt={entry.data.title}
+              widths={[400, 800, 1200]}
+              sizes="(min-width: 720px) 50vw, 100vw"
+            />
+          </a>
+          <div class="work-card-info">
+            <a href={entry.data.url} class="work-card-title">
+              {entry.data.title}
+            </a>
+            <p class="work-card-meta">
+              {entry.data.type} / {entry.data.year}
+            </p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .work {
+    --padding-block: 48px;
+    padding-block: var(--padding-block);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (min-width: 1024px) {
+      --padding-block: 80px;
+      gap: 32px;
+    }
+  }
+
+  .work-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--light-text);
+
+    @media (min-width: 1024px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+
+    @media (min-width: 720px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+  }
+
+  .work-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (min-width: 720px) {
+      gap: 24px;
+    }
+  }
+
+  .work-card-image-link {
+    display: block;
+    overflow: hidden;
+  }
+
+  .work-card-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+
+    @media (min-width: 720px) {
+      height: 520px;
+    }
+  }
+
+  .work-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    @media (min-width: 720px) {
+      gap: 8px;
+    }
+  }
+
+  .work-card-title {
+    font-size: 1.375rem;
+    font-weight: 500;
+    color: var(--foreground);
+    text-decoration: none;
+
+    @media (min-width: 720px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .work-card-title:hover {
+    color: var(--accent);
+  }
+
+  .work-card-meta {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--light-text);
+
+    @media (min-width: 720px) {
+      font-size: 1rem;
+    }
+  }
+</style>

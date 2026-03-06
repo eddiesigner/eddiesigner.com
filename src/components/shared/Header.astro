@@ -5,7 +5,7 @@ import HeaderLink from "./HeaderLink.astro";
 
 <header class="header">
   <Wrapper>
-    <div class="header-wrapper">
+    <div class="header-wrapper fade-down-animation">
       <a href="/" class="header-logo">
         <img src="/favicon.svg" alt="" />
         <span>Eduardo Gómez</span>
@@ -29,6 +29,7 @@ import HeaderLink from "./HeaderLink.astro";
     height: var(--height);
     background: var(--transluscent);
     backdrop-filter: blur(20px);
+    z-index: 5;
 
     @media (min-width: 1024px) {
       --height: var(--header-height-desktop);

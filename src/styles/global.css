@@ -77,6 +77,42 @@ body {
   white-space: nowrap;
 }
 
+.fade-down-animation {
+  opacity: 0;
+  animation: fadeDownAnimation 0.5s ease-in-out forwards;
+}
+
+.fade-up-animation {
+  opacity: 0;
+  animation: fadeUpAnimation 0.5s ease-in-out 0.5s forwards;
+}
+
+@keyframes fadeDownAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* === RESETS === */
 
 /* Use a more-intuitive box-sizing model */
