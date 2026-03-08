@@ -1,0 +1,64 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<section class="heading">
+  <div class="heading-inner">
+    <h1 class="heading-title fade-up-animation">{title}</h1>
+    {
+      description && (
+        <p
+          class="heading-description fade-up-animation"
+          set:html={description}
+        />
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .heading {
+    --padding-block: 64px;
+    padding-block: var(--padding-block);
+
+    @media (min-width: 1024px) {
+      --padding-block: 124px;
+    }
+  }
+
+  .heading-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 1024px;
+    margin-inline: auto;
+  }
+
+  .heading-title {
+    font-size: clamp(3rem, 5vw + 2rem, 6.5rem);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--accent);
+  }
+
+  .heading-description {
+    --font-size: 1.125rem;
+    --line-height: 1.6;
+    font-size: var(--font-size);
+    font-weight: 500;
+    line-height: var(--line-height);
+    color: var(--foreground);
+    max-width: 760px;
+    animation-delay: 0.75s;
+
+    @media (min-width: 1024px) {
+      --font-size: 1.5rem;
+      --line-height: 1.5;
+    }
+  }
+</style>

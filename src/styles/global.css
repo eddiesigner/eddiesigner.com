@@ -113,6 +113,34 @@ body {
   }
 }
 
+/* === VIEW TRANSITIONS === */
+
+::view-transition-old(root) {
+  animation: 0.2s ease-in-out fadeOut;
+}
+
+::view-transition-new(root) {
+  animation: 0.2s ease-in-out fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 /* === RESETS === */
 
 /* Use a more-intuitive box-sizing model */
