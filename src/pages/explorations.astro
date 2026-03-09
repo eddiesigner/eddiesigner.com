@@ -6,26 +6,26 @@ import LabsCard from "../components/labs/LabsCard.astro";
 import LabsEntriesSection from "../components/labs/LabsEntriesSection.astro";
 import ContactBanner from "../components/shared/ContactBanner.astro";
 
-const labsEntries = await getCollection("labs");
-const sortedLabs = labsEntries.sort(
+const explorationsEntries = await getCollection("explorations");
+const sortedExplorations = explorationsEntries.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
 <Default>
   <Heading
-    title="Labs"
-    description="Laboratory with tools, plugins and other resources I build for fun.<br />All these projects are public and open source."
+    title="Explorations"
+    description="Designs, prototypes, and exploration of ideas that I work on for inspiration or simply just for fun."
   />
   <LabsEntriesSection>
     {
-      sortedLabs.map((entry) => (
+      sortedExplorations.map((entry) => (
         <LabsCard
           title={entry.data.title}
           description={entry.data.description}
           tools={entry.data.tools}
           image={entry.data.heroImage}
-          url={entry.data.url}
+          url={`/explorations/${entry.id}/`}
         />
       ))
     }

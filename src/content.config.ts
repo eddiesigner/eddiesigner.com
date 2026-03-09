@@ -42,4 +42,19 @@ const labs = defineCollection({
     }),
 });
 
-export const collections = { blog, work, labs };
+const explorations = defineCollection({
+  loader: glob({
+    base: "./src/content/explorations",
+    pattern: "**/*.{md,mdx}",
+  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      pubDate: z.coerce.date(),
+      heroImage: image(),
+      tools: z.array(z.string()),
+    }),
+});
+
+export const collections = { blog, work, labs, explorations };
