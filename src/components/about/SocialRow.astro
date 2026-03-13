@@ -1,0 +1,91 @@
+---
+interface Props {
+  url: string;
+  label: string;
+  value: string;
+}
+
+const { url, label, value } = Astro.props;
+---
+
+<div class="social-row">
+  <div class="social-row-inner">
+    <span class="social-row-label">{label}</span>
+    <a
+      class="social-row-value truncate"
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {value}
+    </a>
+  </div>
+</div>
+
+<style>
+  .social-row {
+    --padding-inline: 20px;
+    --padding-block: 16px;
+    border-top: 1px solid var(--alt-background);
+    padding-block: var(--padding-block);
+    padding-inline: var(--padding-inline);
+
+    @media (min-width: 720px) {
+      --padding-inline: 32px;
+    }
+
+    @media (min-width: 1024px) {
+      --padding-block: 32px;
+    }
+
+    @media (min-width: 1280px) {
+      --padding-inline: 64px;
+    }
+
+    @media (min-width: 1440px) {
+      --padding-inline: 80px;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid var(--alt-background);
+    }
+  }
+
+  .social-row-inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    margin-inline: auto;
+  }
+
+  .social-row-label {
+    font-size: clamp(1.125rem, 0.33rem + 3.39vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--light-text);
+    text-align: right;
+  }
+
+  .social-row-value {
+    --padding-inline-start: 32px;
+    font-size: clamp(1.125rem, 0.33rem + 3.39vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--accent);
+    text-decoration: none;
+    padding-inline-start: var(--padding-inline-start);
+    transition: opacity 0.2s ease-in-out;
+
+    @media (min-width: 720px) {
+      --padding-inline-start: 64px;
+    }
+
+    @media (min-width: 1024px) {
+      padding-inline-start: 120px;
+    }
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+</style>

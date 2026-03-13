@@ -2,6 +2,7 @@
 
 :root {
   --max-width: 1568px;
+  --max-content-width: 1312px;
   --content-width: 720px;
   --header-height-mobile: 72px;
   --header-height-desktop: 80px;
@@ -43,6 +44,24 @@ body {
 body {
   background-color: var(--background);
   color: var(--foreground);
+}
+
+p {
+  & a {
+    color: var(--accent);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+  }
+}
+
+b,
+strong {
+  color: var(--foreground);
+  font-weight: 600;
 }
 
 :focus-visible {

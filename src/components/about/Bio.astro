@@ -1,0 +1,142 @@
+---
+import { getImage } from "astro:assets";
+import selfieMobile from "../../assets/img/about/selfie-mobile.webp";
+import selfieDesktop from "../../assets/img/about/selfie-desktop.webp";
+
+const mobile = await getImage({ src: selfieMobile, format: "webp" });
+const desktop = await getImage({ src: selfieDesktop, format: "webp" });
+---
+
+<section class="bio">
+  <div class="bio-inner">
+    <picture class="bio-image fade-up-animation">
+      <source media="(min-width: 1024px)" srcset={desktop.src} />
+      <img src={mobile.src} alt="Eduardo Gómez" />
+    </picture>
+    <div class="bio-content fade-up-animation">
+      <h2 class="bio-heading">
+        Hi, I'm Eduardo, a Frontend Engineer and UI/UX Designer with over 14
+        years of experience, currently based in Mexico.
+      </h2>
+      <div class="bio-paragraphs">
+        <p class="bio-text">
+          I work as a freelance frontend engineer and UI/UX designer at <a
+            href="https://www.helloagain.com/en"
+            target="_blank"
+            rel="noopener noreferrer">hello again</a
+          >, where I help take the product to the next level and deliver
+          meaningful user experiences.
+        </p>
+        <p class="bio-text">
+          Over the years I’ve built web and mobile applications for a range of
+          companies. Outside client work I contribute to open-source projects
+          and pursue personal design and development gigs. I enjoy being
+          involved in every stage of a product’s lifecycle — from ideation and
+          user research to design, implementation, release, and iterative
+          improvement.
+        </p>
+        <p class="bio-text">
+          When I’m not coding, I’m designing. I thrive on steady movement and
+          continuous learning, always exploring new techniques to improve the
+          craft of building digital products.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bio {
+    --padding-block: 64px;
+    padding-block: var(--padding-block);
+
+    @media (min-width: 1024px) {
+      --padding-block: 124px;
+    }
+  }
+
+  .bio-inner {
+    --gap: 48px;
+    --flex-direction: column;
+    display: flex;
+    flex-direction: var(--flex-direction);
+    gap: var(--gap);
+    max-width: var(--max-content-width);
+    margin-inline: auto;
+
+    @media (min-width: 720px) {
+      --flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    @media (min-width: 1024px) {
+      --gap: 64px;
+    }
+  }
+
+  .bio-image {
+    flex-shrink: 0;
+
+    img {
+      --width: 100%;
+      --height: 420px;
+      width: var(--width);
+      height: var(--height);
+      object-fit: contain;
+
+      @media (min-width: 1024px) {
+        --width: 416px;
+        --height: 555px;
+      }
+    }
+  }
+
+  .bio-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    animation-delay: 0.75s;
+
+    @media (min-width: 720px) {
+      max-width: 760px;
+    }
+  }
+
+  .bio-heading {
+    --font-size: 1.75rem;
+    --line-height: 1.4;
+    font-size: var(--font-size);
+    font-weight: 500;
+    line-height: var(--line-height);
+    color: var(--foreground);
+
+    @media (min-width: 1024px) {
+      --font-size: 2.5rem;
+      --line-height: 1.3;
+    }
+  }
+
+  .bio-paragraphs {
+    --gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+
+    @media (min-width: 1024px) {
+      --gap: 32px;
+    }
+  }
+
+  .bio-text {
+    --font-size: 1rem;
+    font-size: var(--font-size);
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--light-text);
+
+    @media (min-width: 1024px) {
+      --font-size: 1.25rem;
+    }
+  }
+</style>

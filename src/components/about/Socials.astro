@@ -1,0 +1,45 @@
+---
+import SocialRow from "./SocialRow.astro";
+
+const socials = [
+  {
+    label: "Email",
+    value: "this.eduardo[at]gmail.com",
+    url: "mailto:this.eduardo@gmail.com",
+  },
+  {
+    label: "GitHub",
+    value: "github.com/eddiesigner",
+    url: "https://github.com/eddiesigner",
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/eddiesigner",
+    url: "https://linkedin.com/in/eddiesigner",
+  },
+  {
+    label: "X",
+    value: "x.com/eddiesigner",
+    url: "https://x.com/eddiesigner",
+  },
+];
+---
+
+<section class="socials fade-up-animation">
+  {socials.map((social) => <SocialRow {...social} />)}
+</section>
+
+<style>
+  .socials {
+    --padding-block: 16px;
+    padding-block: var(--padding-block);
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+    animation-delay: 1s;
+
+    @media (min-width: 1024px) {
+      --padding-block: 32px;
+    }
+  }
+</style>
