@@ -1,0 +1,32 @@
+---
+import type { GetStaticPaths, Page } from "astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+import { BLOG_PAGE_SIZE } from "../../../consts";
+import BlogList from "../../../layouts/BlogList.astro";
+
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+  const posts = await getCollection("blog");
+  const tags = [...new Set(posts.flatMap((post) => post.data.tags ?? []))];
+  return tags.flatMap((tag) => {
+    const slug = tag.toLowerCase().replace(/\s+/g, "-");
+    const tagPosts = posts
+      .filter((post) => post.data.tags?.includes(tag))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    return paginate(tagPosts, {
+      params: { tag: slug },
+      props: { tag },
+      pageSize: BLOG_PAGE_SIZE,
+    });
+  });
+};
+
+type Props = { tag: string; page: Page<CollectionEntry<"blog">> };
+const { tag, page } = Astro.props;
+---
+
+<BlogList
+  title={tag.charAt(0).toUpperCase() + tag.slice(1)}
+  posts={page.data}
+  prevUrl={page.url.prev}
+  nextUrl={page.url.next}
+/>

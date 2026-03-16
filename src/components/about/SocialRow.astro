@@ -8,7 +8,7 @@ interface Props {
 const { url, label, value } = Astro.props;
 ---
 
-<div class="social-row">
+<div class="social-row break-out">
   <div class="social-row-inner">
     <span class="social-row-label">{label}</span>
     <a
@@ -24,26 +24,12 @@ const { url, label, value } = Astro.props;
 
 <style>
   .social-row {
-    --padding-inline: 20px;
     --padding-block: 16px;
     border-top: 1px solid var(--alt-background);
     padding-block: var(--padding-block);
-    padding-inline: var(--padding-inline);
-
-    @media (min-width: 720px) {
-      --padding-inline: 32px;
-    }
 
     @media (min-width: 1024px) {
       --padding-block: 32px;
-    }
-
-    @media (min-width: 1280px) {
-      --padding-inline: 64px;
-    }
-
-    @media (min-width: 1440px) {
-      --padding-inline: 80px;
     }
 
     &:last-child {

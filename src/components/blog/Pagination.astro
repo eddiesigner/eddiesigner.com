@@ -1,0 +1,106 @@
+---
+import Icon from "../ui/Icon.astro";
+
+interface Props {
+  prevUrl: string | undefined;
+  nextUrl: string | undefined;
+}
+
+const { prevUrl, nextUrl } = Astro.props;
+---
+
+<nav class="pagination" aria-label="Blog pagination">
+  <div class="pagination-inner">
+    {
+      prevUrl ? (
+        <a class="pagination-btn" href={prevUrl}>
+          <span class="pagination-icon">
+            <Icon id="arrow-left" size={16} />
+          </span>
+          Prev
+        </a>
+      ) : (
+        <span
+          class="pagination-btn pagination-btn--disabled"
+          aria-disabled="true"
+        >
+          <span class="pagination-icon">
+            <Icon id="arrow-left" size={16} />
+          </span>
+          Prev
+        </span>
+      )
+    }
+    {
+      nextUrl ? (
+        <a class="pagination-btn" href={nextUrl}>
+          Next
+          <span class="pagination-icon">
+            <Icon id="arrow-right" size={16} />
+          </span>
+        </a>
+      ) : (
+        <span
+          class="pagination-btn pagination-btn--disabled"
+          aria-disabled="true"
+        >
+          Next
+          <span class="pagination-icon">
+            <Icon id="arrow-right" size={16} />
+          </span>
+        </span>
+      )
+    }
+  </div>
+</nav>
+
+<style>
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pagination-inner {
+    --gap: 40px;
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+
+    @media (min-width: 720px) {
+      --gap: 64px;
+    }
+  }
+
+  .pagination-btn {
+    --font-size: 0.9375rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--font-size);
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--foreground);
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+
+    @media (min-width: 720px) {
+      --font-size: 1rem;
+    }
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  .pagination-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+
+  .pagination-btn--disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+</style>

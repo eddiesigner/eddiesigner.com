@@ -1,12 +1,14 @@
 ---
 interface Props {
   label: string;
+  url?: string;
 }
 
-const { label } = Astro.props;
+const { label, url } = Astro.props;
+const Element = url ? "a" : "span";
 ---
 
-<span class="tag">{label}</span>
+<Element class="tag" href={url}>{label}</Element>
 
 <style>
   .tag {
@@ -17,5 +19,15 @@ const { label } = Astro.props;
     font-weight: 500;
     line-height: 1.2;
     color: var(--light-text);
+    align-self: flex-start;
+    text-decoration: none;
+  }
+
+  a.tag {
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.75;
+    }
   }
 </style>

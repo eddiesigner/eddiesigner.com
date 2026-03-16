@@ -4,3 +4,4 @@
 export const SITE_TITLE = "Eduardo Gómez - Frontend Engineer & UI/UX Designer";
 export const SITE_DESCRIPTION =
   "I have a keen eye for creating usable and engaging user interfaces that I then bring to reality through code.";
+export const BLOG_PAGE_SIZE = 12;

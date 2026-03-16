@@ -1,0 +1,60 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Default from "./Default.astro";
+import Heading from "../components/shared/Heading.astro";
+import PostEntry from "../components/blog/PostEntry.astro";
+import Pagination from "../components/blog/Pagination.astro";
+import ContactBanner from "../components/shared/ContactBanner.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  posts: CollectionEntry<"blog">[];
+  prevUrl: string | undefined;
+  nextUrl: string | undefined;
+}
+
+const { title, description, posts, prevUrl, nextUrl } = Astro.props;
+---
+
+<Default>
+  <Heading {title} {description} />
+  <div class="posts-container fade-up-animation">
+    <section class="posts">
+      {
+        posts.map((post) => (
+          <PostEntry
+            url={`/blog/${post.id}/`}
+            title={post.data.title}
+            pubDate={post.data.pubDate}
+            tags={post.data.tags}
+          />
+        ))
+      }
+    </section>
+    <Pagination {prevUrl} {nextUrl} />
+  </div>
+  <ContactBanner />
+</Default>
+
+<style>
+  .posts-container {
+    --gap: 40px;
+    --pading-block: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding-block: var(--pading-block);
+    animation-delay: 1s;
+
+    @media (min-width: 720px) {
+      --gap: 64px;
+      --pading-block: 32px;
+    }
+  }
+
+  .posts {
+    margin-inline: calc(50% - 50vw);
+    width: 100vw;
+  }
+</style>

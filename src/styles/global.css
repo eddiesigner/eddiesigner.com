@@ -3,6 +3,7 @@
 :root {
   --max-width: 1568px;
   --max-content-width: 1312px;
+  --wide-content-width: 1024px;
   --content-width: 720px;
   --header-height-mobile: 72px;
   --header-height-desktop: 80px;
@@ -94,6 +95,23 @@ strong {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.break-out {
+  --padding-inline: 20px;
+  padding-inline: var(--padding-inline);
+
+  @media (min-width: 720px) {
+    --padding-inline: 32px;
+  }
+
+  @media (min-width: 1280px) {
+    --padding-inline: 64px;
+  }
+
+  @media (min-width: 1440px) {
+    --padding-inline: 80px;
+  }
 }
 
 .fade-down-animation {

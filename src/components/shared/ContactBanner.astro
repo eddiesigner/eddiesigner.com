@@ -2,7 +2,7 @@
 import Button from "../ui/Button.astro";
 ---
 
-<section class="banner">
+<section class="banner fade-up-animation">
   <div class="banner-main">
     <h2 class="banner-title">Interested in working together on a project?</h2>
     <p class="banner-text">
@@ -22,6 +22,7 @@ import Button from "../ui/Button.astro";
     gap: 40px;
     text-align: center;
     padding-block: var(--padding);
+    animation-delay: 1s;
 
     @media (min-width: 720px) {
       --padding: 128px;
