@@ -1,90 +1,235 @@
 ---
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/shared/BaseHead.astro";
-import Footer from "../components/shared/Footer.astro";
-import FormattedDate from "../components/blog/FormattedDate.astro";
 import Header from "../components/shared/Header.astro";
+import Footer from "../components/shared/Footer.astro";
+import Wrapper from "../components/ui/Wrapper.astro";
+import ContactBanner from "../components/shared/ContactBanner.astro";
+import PostHeader from "../components/blog/PostHeader.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & { body?: string };
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { body, ...data } = Astro.props;
+const { title, description } = data;
+const readingTime = body
+  ? Math.ceil(body.trim().split(/\s+/).length / 200)
+  : undefined;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <style>
-      main {
-        width: calc(100% - 2em);
-        max-width: 100%;
-        margin: 0;
-      }
-      .hero-image {
-        width: 100%;
-      }
-      .hero-image img {
-        display: block;
-        margin: 0 auto;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow);
-      }
-      .prose {
-        width: 720px;
-        max-width: calc(100% - 2em);
-        margin: auto;
-        padding: 1em;
-        color: rgb(var(--gray-dark));
-      }
-      .title {
-        margin-bottom: 1em;
-        padding: 1em 0;
-        text-align: center;
-        line-height: 1;
-      }
-      .title h1 {
-        margin: 0 0 0.5em 0;
-      }
-      .date {
-        margin-bottom: 0.5em;
-        color: rgb(var(--gray));
-      }
-      .last-updated-on {
-        font-style: italic;
-      }
-    </style>
   </head>
-
   <body>
     <Header />
     <main>
-      <article>
-        <div class="hero-image">
-          {
-            heroImage && (
-              <Image width={1020} height={510} src={heroImage} alt="" />
-            )
-          }
-        </div>
-        <div class="prose">
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <h1>{title}</h1>
-            <hr />
+      <Wrapper>
+        <div class="post-container">
+          <PostHeader post={data} {readingTime} />
+          <div class="post-content fade-up-animation">
+            <slot />
           </div>
-          <slot />
         </div>
-      </article>
+        <ContactBanner />
+      </Wrapper>
     </main>
     <Footer />
   </body>
 </html>
+
+<style>
+  .post-container {
+    margin-inline: auto;
+    max-width: var(--content-width);
+  }
+
+  .post-content {
+    --padding-block: 16px;
+    padding-block: var(--padding-block);
+
+    @media (min-width: 1024px) {
+      --padding-block: 32px;
+    }
+  }
+
+  .post-content {
+    --block-spacing: 24px;
+    --font-size: 1rem;
+    --line-height: 1.7;
+    color: var(--light-text);
+    line-height: var(--line-height);
+    font-size: var(--font-size);
+
+    @media (min-width: 1024px) {
+      --font-size: 1.25rem;
+      --line-height: 1.6;
+      --block-spacing: 32px;
+    }
+
+    p,
+    ul,
+    ol,
+    blockquote,
+    pre,
+    table,
+    figure,
+    img,
+    video,
+    iframe,
+    hr,
+    canvas {
+      margin-block-end: var(--block-spacing);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 500;
+      margin-block-start: 8px;
+      margin-block-end: 16px;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      line-height: 1.4;
+    }
+
+    h3 {
+      font-size: 1.375rem;
+      line-height: 1.4;
+    }
+
+    h4 {
+      font-size: 1.125rem;
+      line-height: 1.5;
+    }
+
+    h5 {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    h6 {
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    ul,
+    ol {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      li {
+        ul,
+        ol {
+          margin-block-start: 12px;
+        }
+      }
+    }
+
+    ul {
+      padding-inline-start: 20px;
+
+      li {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset-inline-start: -20px;
+          inset-block-start: 0.55em;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: var(--foreground);
+          opacity: 0.25;
+        }
+      }
+    }
+
+    ol {
+      padding-inline-start: 36px;
+      counter-reset: list-counter;
+
+      li {
+        position: relative;
+        counter-increment: list-counter;
+
+        &::before {
+          content: counter(list-counter);
+          position: absolute;
+          inset-inline-start: -36px;
+          inset-block-start: 0;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+          color: var(--accent);
+          font-size: 0.875rem;
+          font-weight: 600;
+          line-height: 24px;
+          text-align: center;
+        }
+      }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.875rem;
+      line-height: 1.3;
+    }
+
+    th,
+    td {
+      padding-inline: 12px;
+      text-align: start;
+      color: var(--foreground);
+    }
+
+    th {
+      padding-block: 16px;
+      font-weight: 500;
+      border-block-end: 1px solid var(--alt-background);
+    }
+
+    td {
+      padding-block: 10px;
+      font-weight: 400;
+    }
+
+    tbody tr:not(:last-child) td {
+      border-block-end: 1px solid var(--alt-background);
+    }
+
+    :not(pre) > code {
+      color: var(--light-text);
+      line-height: 1.9;
+      font-family: var(--code-font);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.0625rem 0.25rem;
+      border-radius: 4px;
+      border: 1px solid var(--alt-background);
+    }
+
+    mark {
+      background-color: oklch(85% 0.175 85 / 0.9);
+      color: oklch(14% 0.02 240);
+      padding-inline: 4px;
+      border-radius: 2px;
+    }
+  }
+</style>

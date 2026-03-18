@@ -1,0 +1,208 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import Icon from "../ui/Icon.astro";
+import FormattedDate from "./FormattedDate.astro";
+
+interface Props {
+  post: CollectionEntry<"blog">["data"];
+  readingTime?: number;
+}
+
+const { post, readingTime } = Astro.props;
+const { title, description, pubDate, tags } = post;
+const rawTag = tags?.[0];
+const tag = rawTag
+  ? {
+      label: rawTag.charAt(0).toUpperCase() + rawTag.slice(1),
+      url: `/tag/${rawTag.toLowerCase().replace(/\s+/g, "-")}/`,
+    }
+  : undefined;
+---
+
+<header class="post-header fade-up-animation">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/blog/" class="breadcrumb-blog">
+      <span class="breadcrumb-icon" aria-hidden="true">
+        <Icon id="arrow-left" size={16} />
+      </span>
+      Blog
+    </a>
+    {
+      tag && (
+        <>
+          <span class="breadcrumb-separator" aria-hidden="true">
+            /
+          </span>
+          <a href={tag.url} class="breadcrumb-current">
+            {tag.label}
+          </a>
+        </>
+      )
+    }
+  </nav>
+  <div class="post-header-inner">
+    {
+      post.heroImage && (
+        <div class="post-header-image">
+          <Image src={post.heroImage} alt={title} width={720} height={400} />
+        </div>
+      )
+    }
+    <div class="post-header-body">
+      <h1 class="post-header-title">{title}</h1>
+      {description && <p class="post-header-description">{description}</p>}
+    </div>
+    <div class="post-header-meta">
+      <div class="meta-item">
+        <Icon id="calendar-dots" size={16} />
+        <FormattedDate date={pubDate} />
+      </div>
+      {
+        readingTime && (
+          <div class="meta-item">
+            <Icon id="clock-countdown" size={16} />
+            <span>{readingTime} min read</span>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</header>
+
+<style>
+  .post-header {
+    --padding-block-start: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-block-start: var(--padding-block-start);
+    padding-block-end: 32px;
+
+    @media (min-width: 1024px) {
+      --padding-block-start: 124px;
+    }
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    line-height: 1.3;
+  }
+
+  .breadcrumb-blog {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--light-text);
+    font-weight: 400;
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  .breadcrumb-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+
+  .breadcrumb-separator {
+    color: var(--light-text);
+    font-weight: 500;
+  }
+
+  .breadcrumb-current {
+    color: var(--foreground);
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  .post-header-inner {
+    --gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+
+    @media (min-width: 1024px) {
+      --gap: 32px;
+    }
+  }
+
+  .post-header-image {
+    padding-block-start: 16px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  .post-header-body {
+    --gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+
+    @media (min-width: 1024px) {
+      --gap: 16px;
+    }
+  }
+
+  .post-header-title {
+    --font-size: 2rem;
+    --line-height: 1.3;
+    font-size: var(--font-size);
+    font-weight: 500;
+    line-height: var(--line-height);
+    color: var(--foreground);
+
+    @media (min-width: 1024px) {
+      --font-size: 3rem;
+      --line-height: 1.2;
+    }
+  }
+
+  .post-header-description {
+    --font-size: 1rem;
+    --line-height: 1.7;
+    font-size: var(--font-size);
+    font-weight: 500;
+    line-height: var(--line-height);
+    color: var(--light-text);
+
+    @media (min-width: 1024px) {
+      --font-size: 1.25rem;
+      --line-height: 1.5;
+    }
+  }
+
+  .post-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--light-text);
+  }
+</style>

@@ -7,6 +7,9 @@
   --content-width: 720px;
   --header-height-mobile: 72px;
   --header-height-desktop: 80px;
+  --code-font:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+    Courier New, monospace;
 }
 
 /* === THEME === */
