@@ -8,4 +8,9 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://eddiesigner.com",
   integrations: [mdx(), sitemap()],
+  markdown: {
+    shikiConfig: {
+      theme: "vesper",
+    },
+  },
 });

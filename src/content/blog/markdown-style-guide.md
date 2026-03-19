@@ -39,7 +39,13 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 ```
 
 ### Output
-![Alt text](https://images.unsplash.com/photo-1773332611628-9e1bdce4881b?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+<figure>
+  <img src="https://images.unsplash.com/photo-1773332611628-9e1bdce4881b?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Description" />
+  <figcaption>☝️ Illustration showing how flexible this component can be.</figcaption>
+</figure>
+
+## Videos
+<iframe width="560" height="315" src="https://www.youtube.com/embed/j2rszuZ-9PY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Blockquotes
 
