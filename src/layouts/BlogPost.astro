@@ -41,7 +41,9 @@ const readingTime = body
 <script>
   function initIframes() {
     document
-      .querySelectorAll<HTMLIFrameElement>(".post-content iframe[width][height]")
+      .querySelectorAll<HTMLIFrameElement>(
+        ".post-content iframe[width][height]",
+      )
       .forEach((iframe) => {
         const w = parseFloat(iframe.getAttribute("width")!);
         const h = parseFloat(iframe.getAttribute("height")!);
@@ -186,14 +188,14 @@ const readingTime = body
 
     ul,
     ol {
-      --gap: 12px;
+      --gap: 16px;
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: var(--gap);
 
       @media (min-width: 720px) {
-        --gap: 16px;
+        --gap: 24px;
       }
 
       li {
@@ -236,7 +238,7 @@ const readingTime = body
           content: counter(list-counter);
           position: absolute;
           inset-inline-start: -36px;
-          inset-block-start: 0;
+          inset-block-start: 5px;
           width: 24px;
           height: 24px;
           border-radius: 50%;
@@ -302,7 +304,7 @@ const readingTime = body
 
     :not(pre) > code {
       --font-size: 0.875rem;
-      color: var(--light-text);
+      color: var(--foreground);
       line-height: 1.9;
       font-family: var(--code-font);
       font-size: var(--font-size);
@@ -347,6 +349,12 @@ const readingTime = body
 
     iframe {
       width: 100%;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: var(--alt-background);
     }
   }
 </style>

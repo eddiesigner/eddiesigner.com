@@ -1,0 +1,37 @@
+---
+title: 'Open external links in a new tab in Ghost'
+description: 'In this post you will learn how to open all external links in your Ghost publication in a new tab regardless of the theme you use.'
+pubDate: 'Jun 18 2023'
+tags: ['ghost']
+heroImage: ''
+---
+
+By default in [Ghost](https://ghost.org/) all links open in the same tab or window, even external links, this may not be a problem for many but for some writers or content creators it definitely is because the ideal is not to push visitors away and take them to another site since in general what is desired is to retain visitors on the website as much as possible to not lose their attention and thus have more opportunities to meet the goals that are planned with the site.
+
+Fortunately it is very easy to make all external links open in another tab or another window so that visitors keep our own site open. Basically what you have to do is open the Ghost Admin and go to **Options → Code injection → Site Footer** and paste the following code:
+
+```html
+<!-- Open external links in a new tab/window -->
+<script>
+  const anchors = document.querySelectorAll('a');
+    
+  for (x = 0, l = anchors.length; x < l; x++) {
+    const regex = new RegExp('/' + window.location.host + '/');
+        
+    if (!regex.test(anchors[x].href)) {
+      anchors[x].setAttribute('target', '_blank');
+      anchors[x].setAttribute('rel', 'noopener');
+    }
+  }
+</script>
+```
+
+Broadly speaking, what this code does is to select all the links that exist in the site, go through each and every one and compare if the domain of the link is different from that of our own site, in case it is so, the attribute `target="_blank"` is added so that it opens in a new tab or window when clicking on it; additionally the attribute `rel="noopener"` is added to [prevent performance and security issues](https://developer.chrome.com/en/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/).
+
+Once the changes are saved, you only have to reload the website and click on an external link, when you do this it should open in a new tab or window, this way you will not completely take your visitors away from your site every time they open an external link 😉.
+
+<hr>
+
+## Looking for premium Ghost themes?
+
+If you are looking for a premium theme for your publication don't forget to take a look at some of my themes featuring an impeccable design, adaptable to any type of content, with excellent reviews and with plenty of documentation for you to get the most out of them.

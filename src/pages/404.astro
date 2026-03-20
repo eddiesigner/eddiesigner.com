@@ -10,6 +10,15 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <script is:inline>
+      document.addEventListener("astro:page-load", () => {
+        const video = document.querySelector(".bg-video");
+        if (video) {
+          video.load();
+          video.play().catch(() => {});
+        }
+      });
+    </script>
   </head>
   <body>
     <video class="bg-video" autoplay muted loop playsinline>

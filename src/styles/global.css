@@ -65,7 +65,7 @@ p {
 b,
 strong {
   color: var(--foreground);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 :focus-visible {

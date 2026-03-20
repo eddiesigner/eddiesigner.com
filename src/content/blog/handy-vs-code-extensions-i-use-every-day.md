@@ -1,0 +1,48 @@
+---
+title: 'Handy VS Code extensions I use every day'
+description: 'List of extensions for VS Code that I use every day in my work as a frontend developer.'
+pubDate: 'Dec 11 2023'
+tags: ['productivity']
+heroImage: ''
+---
+
+Despite the fact that I am a person who does not have too many extensions installed in [VS Code](https://code.visualstudio.com/), there are actually some that I use practically every day, some are surely well known by everyone but I think there are some others that are not so much and I think it's worth sharing since they are very practical and useful in day to day life.
+
+## GitHub Copilot
+
+To tell the truth, at first I was very reluctant to use [GitHub Copilot](https://github.com/features/copilot) because I doubted its efficiency, in fact I thought it would be more annoying than useful according to the videos I had seen before, however it seems that after several iterations it has reached a point where it is really good, I have been using it for a month in different projects and now I can say that my productivity has increased noticeably.
+
+The autocomplete function works really well and gets even better the more you use it, sometimes it surprises me how proactive and accurate it can be. Personally, I recommend also installing the GitHub Copilot Chat extension so you can make queries about your code or something you want to implement, I have practically stopped consulting on [StackOverflow](https://devclass.com/2023/05/15/stack-overflow-traffic-drops-as-developers-turn-to-ai-coding-assistants) 😅
+
+## GitLens
+
+Although VS Code has good native support for Git, this extension dramatically increases productivity when working with code within a repository. I personally find the following functions very useful: Blame Annotations, Commit Graph, CodeLens, Rich Hovers and Revision Navigation. I can truly say that this extension has helped me understand and review the code of the projects I work on every day, especially those that other people also work on.
+
+## Markdown Preview Enhanced
+
+Because I develop Ghost themes, I constantly have to write technical documentation and for end users, I write such documentation in Markdown files so this extension is very useful for me as it allows me to visualize the final result at the same time I make changes to the file, in this way I make sure that the format of the content is appropriate. It also offers the possibility of exporting the file to other formats like PDF, HTML or Pandoc.
+
+## Multiple cursor case preserve
+
+Surely you have been in a situation where you want to change one or more letters (even words) in multiple variable names but you can't do it in all because some of them start in lowercase, others start in uppercase letter or maybe there are even others where all are in uppercase, all lowercase or all caps, well thanks to this extension you will be able to select all of them, change the letters you want and preserve the format of the variables automatically, without a doubt a lifesaver.
+
+## px to rem
+
+If you, like me, write a lot of CSS code, you've surely had the need to write values in rem units. To do this, you may resort to a calculator or some online converter to transform pixel values to rem values. Fortunately, there is an extension that allows converting pixels to rem and vice versa in a quick and easy way, you just need to select the value you want to convert, use the appropriate key combination and voila. The default value is 16px per rem but if you wish you can change it in the extension settings.
+
+## Web Accessibility
+
+If you are a frontend developer and want to create more accessible websites and web applications, this extension is for you. What this extension does is visually indicate the parts of your code that require attention to be more accessible, it also tells you what to do to solve the problem. It does not matter if you are writing HTML code or if you use a different template system like Handlebars or a framework like Vue, this extension is capable of detecting basic accessibility problems so that you can correct them at the moment.
+
+## Special Mentions
+
+If you're a frontend developer, you might already have the following extensions installed. However, I thought it would be helpful to share them just in case you aren't familiar with some:
+
+* [Alpine.js IntelliSense](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.alpine-js-intellisense) – Simple IntelliSense & Snippets for Alpine.js framework
+* [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode) – Language support for Astro
+* [Ghost](https://marketplace.visualstudio.com/items?itemName=TryGhost.ghost) – Official Ghost extension for theme development in Visual Studio Code
+* [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets) – Code snippets for JavaScript in ES6 syntax
+* [JS JSX Snippets](https://marketplace.visualstudio.com/items?itemName=skyran.js-jsx-snippets) – Extensions for React, Redux in JS with babel and ES7 syntax
+* [Nuxtr](https://marketplace.visualstudio.com/items?itemName=Nuxtr.nuxtr-vscode) – An extension for Nuxt.js offering commands and tools to make your experience more pleasant
+* [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) – Language support for Vue 3
+* [vuevelocidad](https://marketplace.visualstudio.com/items?itemName=davidBernegger.vuevelocidad) – Vue Snippets for fast and easy development
