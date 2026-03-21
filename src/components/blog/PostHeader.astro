@@ -5,12 +5,18 @@ import Icon from "../ui/Icon.astro";
 import FormattedDate from "./FormattedDate.astro";
 
 interface Props {
-  post: CollectionEntry<"blog">["data"];
+  post:
+    | CollectionEntry<"blog">["data"]
+    | CollectionEntry<"explorations">["data"];
   readingTime?: number;
+  backUrl?: string;
+  backLabel?: string;
 }
 
-const { post, readingTime } = Astro.props;
-const { title, description, pubDate, tags } = post;
+const { post, readingTime, backUrl = "/blog/", backLabel = "Blog" } =
+  Astro.props;
+const { title, description, pubDate } = post;
+const tags = "tags" in post ? post.tags : undefined;
 const rawTag = tags?.[0];
 const tag = rawTag
   ? {
@@ -18,15 +24,23 @@ const tag = rawTag
       url: `/tag/${rawTag.toLowerCase().replace(/\s+/g, "-")}/`,
     }
   : undefined;
+const tools = "tools" in post ? post.tools : undefined;
+const rawTool = tools?.[0];
+const tool = rawTool
+  ? {
+      label: rawTool.charAt(0).toUpperCase() + rawTool.slice(1),
+      url: `/tool/${rawTool.toLowerCase().replace(/\s+/g, "-")}/`,
+    }
+  : undefined;
 ---
 
 <header class="post-header fade-up-animation">
   <nav class="breadcrumb" aria-label="Breadcrumb">
-    <a href="/blog/" class="breadcrumb-blog">
+    <a href={backUrl} class="breadcrumb-blog">
       <span class="breadcrumb-icon" aria-hidden="true">
         <Icon id="arrow-left" size={16} />
       </span>
-      Blog
+      {backLabel}
     </a>
     {
       tag && (
@@ -37,6 +51,16 @@ const tag = rawTag
           <a href={tag.url} class="breadcrumb-current">
             {tag.label}
           </a>
+        </>
+      )
+    }
+    {
+      tool && (
+        <>
+          <span class="breadcrumb-separator" aria-hidden="true">
+            /
+          </span>
+          <a href={tool.url} class="breadcrumb-current">{tool.label}</a>
         </>
       )
     }

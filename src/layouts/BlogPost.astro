@@ -7,9 +7,12 @@ import Wrapper from "../components/ui/Wrapper.astro";
 import ContactBanner from "../components/shared/ContactBanner.astro";
 import PostHeader from "../components/blog/PostHeader.astro";
 
-type Props = CollectionEntry<"blog">["data"] & { body?: string };
+type Props = (
+  | CollectionEntry<"blog">["data"]
+  | CollectionEntry<"explorations">["data"]
+) & { body?: string; backUrl?: string; backLabel?: string };
 
-const { body, ...data } = Astro.props;
+const { body, backUrl, backLabel, ...data } = Astro.props;
 const { title, description } = data;
 const readingTime = body
   ? Math.ceil(body.trim().split(/\s+/).length / 200)
@@ -26,7 +29,7 @@ const readingTime = body
     <main>
       <Wrapper>
         <div class="post-container">
-          <PostHeader post={data} {readingTime} />
+          <PostHeader post={data} {readingTime} {backUrl} {backLabel} />
           <div class="post-content fade-up-animation">
             <slot />
           </div>

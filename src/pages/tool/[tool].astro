@@ -1,0 +1,44 @@
+---
+import type { GetStaticPaths } from "astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+import Default from "../../layouts/Default.astro";
+import Heading from "../../components/shared/Heading.astro";
+import LabsCard from "../../components/labs/LabsCard.astro";
+import LabsEntriesSection from "../../components/labs/LabsEntriesSection.astro";
+import ContactBanner from "../../components/shared/ContactBanner.astro";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const entries = await getCollection("explorations");
+  const tools = [...new Set(entries.flatMap((entry) => entry.data.tools))];
+  return tools.map((tool) => {
+    const slug = tool.toLowerCase().replace(/\s+/g, "-");
+    const filtered = entries
+      .filter((entry) => entry.data.tools.includes(tool))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    return { params: { tool: slug }, props: { tool, entries: filtered } };
+  });
+};
+
+type Props = { tool: string; entries: CollectionEntry<"explorations">[] };
+
+const { tool, entries } = Astro.props;
+const title = tool.charAt(0).toUpperCase() + tool.slice(1);
+---
+
+<Default>
+  <Heading {title} />
+  <LabsEntriesSection>
+    {
+      entries.map((entry) => (
+        <LabsCard
+          title={entry.data.title}
+          description={entry.data.description}
+          tools={entry.data.tools}
+          image={entry.data.heroImage}
+          url={`/explorations/${entry.id}/`}
+        />
+      ))
+    }
+  </LabsEntriesSection>
+  <ContactBanner />
+</Default>
