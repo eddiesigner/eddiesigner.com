@@ -7,7 +7,9 @@ import FormattedDate from "./FormattedDate.astro";
 interface Props {
   post:
     | CollectionEntry<"blog">["data"]
-    | CollectionEntry<"explorations">["data"];
+    | CollectionEntry<"explorations">["data"]
+    | CollectionEntry<"labs">["data"]
+    | CollectionEntry<"work">["data"];
   readingTime?: number;
   backUrl?: string;
   backLabel?: string;
@@ -15,21 +17,13 @@ interface Props {
 
 const { post, readingTime, backUrl = "/blog/", backLabel = "Blog" } =
   Astro.props;
-const { title, description, pubDate } = post;
-const tags = "tags" in post ? post.tags : undefined;
-const rawTag = tags?.[0];
+const { title, pubDate } = post;
+const description = "description" in post ? post.description : undefined;
+const rawTag = post.tags?.[0];
 const tag = rawTag
   ? {
       label: rawTag.charAt(0).toUpperCase() + rawTag.slice(1),
       url: `/tag/${rawTag.toLowerCase().replace(/\s+/g, "-")}/`,
-    }
-  : undefined;
-const tools = "tools" in post ? post.tools : undefined;
-const rawTool = tools?.[0];
-const tool = rawTool
-  ? {
-      label: rawTool.charAt(0).toUpperCase() + rawTool.slice(1),
-      url: `/tool/${rawTool.toLowerCase().replace(/\s+/g, "-")}/`,
     }
   : undefined;
 ---
@@ -51,16 +45,6 @@ const tool = rawTool
           <a href={tag.url} class="breadcrumb-current">
             {tag.label}
           </a>
-        </>
-      )
-    }
-    {
-      tool && (
-        <>
-          <span class="breadcrumb-separator" aria-hidden="true">
-            /
-          </span>
-          <a href={tool.url} class="breadcrumb-current">{tool.label}</a>
         </>
       )
     }

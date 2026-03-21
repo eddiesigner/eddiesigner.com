@@ -1,18 +1,34 @@
 ---
 import type { GetStaticPaths, Page } from "astro";
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import { BLOG_PAGE_SIZE } from "../../../consts";
 import BlogList from "../../../layouts/BlogList.astro";
 
+type PostItem = { url: string; title: string; pubDate: Date; tags?: string[] };
+
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
-  const posts = await getCollection("blog");
-  const tags = [...new Set(posts.flatMap((post) => post.data.tags ?? []))];
+  const [blog, explorations, labs, work] = await Promise.all([
+    getCollection("blog"),
+    getCollection("explorations"),
+    getCollection("labs"),
+    getCollection("work"),
+  ]);
+
+  const allEntries: PostItem[] = [
+    ...blog.map((e) => ({ url: `/blog/${e.id}/`, title: e.data.title, pubDate: e.data.pubDate, tags: e.data.tags })),
+    ...explorations.map((e) => ({ url: `/explorations/${e.id}/`, title: e.data.title, pubDate: e.data.pubDate, tags: e.data.tags })),
+    ...labs.map((e) => ({ url: `/labs/${e.id}/`, title: e.data.title, pubDate: e.data.pubDate, tags: e.data.tags })),
+    ...work.map((e) => ({ url: `/work/${e.id}/`, title: e.data.title, pubDate: e.data.pubDate, tags: e.data.tags })),
+  ];
+
+  const tags = [...new Set(allEntries.flatMap((e) => e.tags ?? []))];
+
   return tags.flatMap((tag) => {
     const slug = tag.toLowerCase().replace(/\s+/g, "-");
-    const tagPosts = posts
-      .filter((post) => post.data.tags?.includes(tag))
-      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-    return paginate(tagPosts, {
+    const filtered = allEntries
+      .filter((e) => e.tags?.includes(tag))
+      .sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf());
+    return paginate(filtered, {
       params: { tag: slug },
       props: { tag },
       pageSize: BLOG_PAGE_SIZE,
@@ -20,7 +36,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
   });
 };
 
-type Props = { tag: string; page: Page<CollectionEntry<"blog">> };
+type Props = { tag: string; page: Page<PostItem> };
 const { tag, page } = Astro.props;
 ---
 

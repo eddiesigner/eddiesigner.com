@@ -6,12 +6,12 @@ import CardOverlay from "../shared/CardOverlay.astro";
 interface Props {
   title: string;
   description: string;
-  tools: string[];
+  tags?: string[];
   image: ImageMetadata;
   url: string;
 }
 
-const { title, description, tools, image, url } = Astro.props;
+const { title, description, tags, image, url } = Astro.props;
 ---
 
 <article class="labs-card">
@@ -21,7 +21,7 @@ const { title, description, tools, image, url } = Astro.props;
       <p class="labs-card-description" set:html={description} />
     </div>
     <div class="labs-card-tags">
-      {tools.map((tool) => <Tag label={tool} />)}
+      {tags?.map((tag) => <Tag label={tag} />)}
     </div>
   </div>
   <CardOverlay url={url} image={image} alt={title} withBorder />

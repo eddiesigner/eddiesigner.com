@@ -10,10 +10,12 @@ import PostHeader from "../components/blog/PostHeader.astro";
 type Props = (
   | CollectionEntry<"blog">["data"]
   | CollectionEntry<"explorations">["data"]
+  | CollectionEntry<"labs">["data"]
+  | CollectionEntry<"work">["data"]
 ) & { body?: string; backUrl?: string; backLabel?: string };
 
 const { body, backUrl, backLabel, ...data } = Astro.props;
-const { title, description } = data;
+const { title, description = "" } = data;
 const readingTime = body
   ? Math.ceil(body.trim().split(/\s+/).length / 200)
   : undefined;

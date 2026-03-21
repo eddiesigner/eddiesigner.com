@@ -1,15 +1,21 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import Default from "./Default.astro";
 import Heading from "../components/shared/Heading.astro";
 import PostEntry from "../components/blog/PostEntry.astro";
 import Pagination from "../components/blog/Pagination.astro";
 import ContactBanner from "../components/shared/ContactBanner.astro";
 
+interface PostItem {
+  url: string;
+  title: string;
+  pubDate: Date;
+  tags?: string[];
+}
+
 interface Props {
   title: string;
   description?: string;
-  posts: CollectionEntry<"blog">[];
+  posts: PostItem[];
   prevUrl: string | undefined;
   nextUrl: string | undefined;
 }
@@ -24,10 +30,10 @@ const { title, description, posts, prevUrl, nextUrl } = Astro.props;
       {
         posts.map((post) => (
           <PostEntry
-            url={`/blog/${post.id}/`}
-            title={post.data.title}
-            pubDate={post.data.pubDate}
-            tags={post.data.tags}
+            url={post.url}
+            title={post.title}
+            pubDate={post.pubDate}
+            tags={post.tags}
           />
         ))
       }

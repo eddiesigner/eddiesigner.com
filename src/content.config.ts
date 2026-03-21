@@ -22,11 +22,13 @@ const work = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      description: z.string().optional(),
       type: z.string(),
       year: z.string(),
       heroImage: image(),
       url: z.string(),
       pubDate: z.coerce.date(),
+      tags: z.array(z.string()).optional(),
     }),
 });
 
@@ -39,7 +41,7 @@ const labs = defineCollection({
       pubDate: z.coerce.date(),
       heroImage: image(),
       url: z.string(),
-      tools: z.array(z.string()),
+      tags: z.array(z.string()).optional(),
     }),
 });
 
@@ -54,7 +56,7 @@ const explorations = defineCollection({
       description: z.string(),
       pubDate: z.coerce.date(),
       heroImage: image(),
-      tools: z.array(z.string()),
+      tags: z.array(z.string()).optional(),
     }),
 });
 
