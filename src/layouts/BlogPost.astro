@@ -27,7 +27,7 @@ const readingTime = body
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body>
+  <body class:list={[collection]}>
     <Header />
     <main>
       <Wrapper>
@@ -67,7 +67,16 @@ const readingTime = body
       });
   }
 
+  function initActiveNavLink() {
+    if (document.body.classList.contains("work")) {
+      document
+        .querySelector('.header-nav a[href="/"]')
+        ?.classList.add("active");
+    }
+  }
+
   document.addEventListener("astro:page-load", initIframes);
+  document.addEventListener("astro:page-load", initActiveNavLink);
 </script>
 
 <style>
