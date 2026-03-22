@@ -8,7 +8,7 @@ pubDate: 'Mar 04 2026'
 
 ## Continuing the series
 
-This is the continuation of [the design series I started a few days ago](https://eduardogomez.io/blog/music-mobile-app-concept/), this time it's a concept for a food delivery app. In times like the ones we are living now, food delivery apps have become a very important option when it comes to satisfy the need to eat something when you don't have much time, mainly because (at least here in Austria) many of the restaurants and chains are closed and only offer food delivery.
+This is the continuation of [the design series I started a few days ago](https://eddiesigner.com/explorations/music-app/), this time it's a concept for a food delivery app. In times like the ones we are living now, food delivery apps have become a very important option when it comes to satisfy the need to eat something when you don't have much time, mainly because (at least here in Austria) many of the restaurants and chains are closed and only offer food delivery.
 
 Personally I can say that I use this kind of apps very often (maybe more than I should 😅) as I find it very handy, however, I have noticed that the user experience could be much better. In general the applications do their job but since there is not much competition they don't seem to care about offering a better quality product, that's why I decided to elaborate a concept of what I would like to see in this kind of applications.
 
