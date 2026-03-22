@@ -15,7 +15,7 @@ const sortedWork = workEntries.sort(
       sortedWork.map((entry) => (
         <WorkCard
           title={entry.data.title}
-          url={entry.data.url}
+          slug={entry.id}
           heroImage={entry.data.heroImage}
           type={entry.data.type}
           year={entry.data.year}

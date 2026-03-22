@@ -2,7 +2,7 @@
 title: 'Best Chrome extensions for frontend development in 2021'
 description: 'These are the Chrome extensions that I currently use every day as a frontend developer.'
 pubDate: 'Apr 11 2021'
-tags: ['frontend']
+tags: ['frontend', 'productivity']
 heroImage: ''
 ---
 

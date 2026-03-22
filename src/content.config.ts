@@ -26,7 +26,6 @@ const work = defineCollection({
       type: z.string(),
       year: z.string(),
       heroImage: image(),
-      url: z.string(),
       pubDate: z.coerce.date(),
       tags: z.array(z.string()).optional(),
     }),
@@ -40,7 +39,6 @@ const labs = defineCollection({
       description: z.string(),
       pubDate: z.coerce.date(),
       heroImage: image(),
-      url: z.string(),
       tags: z.array(z.string()).optional(),
     }),
 });

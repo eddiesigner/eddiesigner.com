@@ -4,13 +4,14 @@ import CardOverlay from "../shared/CardOverlay.astro";
 
 interface Props {
   title: string;
-  url: string;
+  slug: string;
   heroImage: ImageMetadata;
   type: string;
   year: string;
 }
 
-const { title, url, heroImage, type, year } = Astro.props;
+const { title, slug, heroImage, type, year } = Astro.props;
+const url = `/work/${slug}/`;
 ---
 
 <article class="work-card">

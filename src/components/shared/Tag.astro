@@ -5,10 +5,10 @@ interface Props {
 }
 
 const { label, url } = Astro.props;
-const Element = url ? "a" : "span";
+const href = url ?? `/tag/${label.toLowerCase().replace(/\s+/g, "-")}/`;
 ---
 
-<Element class="tag" href={url}>{label}</Element>
+<a class="tag" href={href}>{label}</a>
 
 <style>
   .tag {
@@ -21,9 +21,6 @@ const Element = url ? "a" : "span";
     color: var(--light-text);
     align-self: flex-start;
     text-decoration: none;
-  }
-
-  a.tag {
     transition: opacity 0.2s ease-in-out;
 
     &:hover {

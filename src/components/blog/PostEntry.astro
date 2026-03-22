@@ -19,12 +19,13 @@ const { url, title, pubDate, tags } = Astro.props;
     </div>
     <div class="post-entry-content">
       <a class="post-entry-title" href={url}>{title}</a>
-      {tags?.[0] && (
-          <Tag
-            label={tags[0]}
-            url={`/tag/${tags[0].toLowerCase().replace(/\s+/g, "-")}/`}
-          />
-        )}
+      {tags && tags.length > 0 && (
+        <div class="post-entry-tags">
+          {tags.map((tag) => (
+            <Tag label={tag} />
+          ))}
+        </div>
+      )}
     </div>
   </div>
 </article>
@@ -85,6 +86,12 @@ const { url, title, pubDate, tags } = Astro.props;
       max-width: var(--wide-content-width);
       margin-inline: auto;
     }
+  }
+
+  .post-entry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .post-entry-title {

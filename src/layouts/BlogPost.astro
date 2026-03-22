@@ -6,6 +6,7 @@ import Footer from "../components/shared/Footer.astro";
 import Wrapper from "../components/ui/Wrapper.astro";
 import ContactBanner from "../components/shared/ContactBanner.astro";
 import PostHeader from "../components/blog/PostHeader.astro";
+import Tag from "../components/shared/Tag.astro";
 
 type Props = (
   | CollectionEntry<"blog">["data"]
@@ -35,6 +36,11 @@ const readingTime = body
           <div class="post-content fade-up-animation">
             <slot />
           </div>
+          {data.tags && data.tags.length > 0 && (
+            <div class="post-tags">
+              {data.tags.map((tag) => <Tag label={tag} />)}
+            </div>
+          )}
         </div>
         <ContactBanner />
       </Wrapper>
@@ -68,6 +74,13 @@ const readingTime = body
   .post-container {
     margin-inline: auto;
     max-width: var(--content-width);
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-block: 32px;
   }
 
   .post-content {

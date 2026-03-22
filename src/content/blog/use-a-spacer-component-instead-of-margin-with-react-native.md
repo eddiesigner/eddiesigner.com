@@ -2,7 +2,7 @@
 title: 'Use a Spacer component instead of margin with React Native'
 description: 'Discover the advantages of using a Spacer component and never worry about fighting with margins again.'
 pubDate: 'Dec 05 2021'
-tags: ['frontend']
+tags: ['frontend', 'react', 'react native']
 heroImage: ''
 ---
 

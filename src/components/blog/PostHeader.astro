@@ -59,7 +59,7 @@ const tag = rawTag
     }
     <div class="post-header-body">
       <h1 class="post-header-title">{title}</h1>
-      {description && <p class="post-header-description">{description}</p>}
+      {description && <p class="post-header-description" set:html={description} />}
     </div>
     <div class="post-header-meta">
       <div class="meta-item">
