@@ -13,9 +13,10 @@ interface Props {
   readingTime?: number;
   backUrl?: string;
   backLabel?: string;
+  collection?: "blog" | "explorations" | "labs" | "work";
 }
 
-const { post, readingTime, backUrl = "/blog/", backLabel = "Blog" } =
+const { post, readingTime, backUrl = "/blog/", backLabel = "Blog", collection } =
   Astro.props;
 const { title, pubDate } = post;
 const description = "description" in post ? post.description : undefined;
@@ -61,20 +62,22 @@ const tag = rawTag
       <h1 class="post-header-title">{title}</h1>
       {description && <p class="post-header-description" set:html={description} />}
     </div>
-    <div class="post-header-meta">
-      <div class="meta-item">
-        <Icon id="calendar-dots" size={16} />
-        <FormattedDate date={pubDate} />
+    {collection === "blog" && (
+      <div class="post-header-meta">
+        <div class="meta-item">
+          <Icon id="calendar-dots" size={16} />
+          <FormattedDate date={pubDate} />
+        </div>
+        {
+          readingTime && (
+            <div class="meta-item">
+              <Icon id="clock-countdown" size={16} />
+              <span>{readingTime} min read</span>
+            </div>
+          )
+        }
       </div>
-      {
-        readingTime && (
-          <div class="meta-item">
-            <Icon id="clock-countdown" size={16} />
-            <span>{readingTime} min read</span>
-          </div>
-        )
-      }
-    </div>
+    )}
   </div>
 </header>
 

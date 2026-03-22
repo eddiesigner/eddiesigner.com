@@ -13,9 +13,9 @@ type Props = (
   | CollectionEntry<"explorations">["data"]
   | CollectionEntry<"labs">["data"]
   | CollectionEntry<"work">["data"]
-) & { body?: string; backUrl?: string; backLabel?: string };
+) & { body?: string; backUrl?: string; backLabel?: string; collection?: "blog" | "explorations" | "labs" | "work" };
 
-const { body, backUrl, backLabel, ...data } = Astro.props;
+const { body, backUrl, backLabel, collection, ...data } = Astro.props;
 const { title, description = "" } = data;
 const readingTime = body
   ? Math.ceil(body.trim().split(/\s+/).length / 200)
@@ -32,7 +32,7 @@ const readingTime = body
     <main>
       <Wrapper>
         <div class="post-container">
-          <PostHeader post={data} {readingTime} {backUrl} {backLabel} />
+          <PostHeader post={data} {readingTime} {backUrl} {backLabel} {collection} />
           <div class="post-content fade-up-animation">
             <slot />
           </div>

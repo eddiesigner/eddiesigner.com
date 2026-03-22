@@ -28,7 +28,7 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
     padding-inline: 8px;
     transition: color 0.2s ease-in-out;
 
-    &:hover {
+    &:not(.active):hover {
       color: var(--light-text);
     }
 
