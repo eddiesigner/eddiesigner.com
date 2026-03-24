@@ -16,8 +16,13 @@ interface Props {
   collection?: "blog" | "explorations" | "labs" | "work";
 }
 
-const { post, readingTime, backUrl = "/blog/", backLabel = "Blog", collection } =
-  Astro.props;
+const {
+  post,
+  readingTime,
+  backUrl = "/blog/",
+  backLabel = "Blog",
+  collection,
+} = Astro.props;
 const { title, pubDate } = post;
 const description = "description" in post ? post.description : undefined;
 const rawTag = post.tags?.[0];
@@ -52,7 +57,7 @@ const tag = rawTag
   </nav>
   <div class="post-header-inner">
     {
-      post.heroImage && (
+      collection === "blog" && post.heroImage && (
         <div class="post-header-image">
           <Image src={post.heroImage} alt={title} width={720} height={400} />
         </div>
@@ -60,24 +65,28 @@ const tag = rawTag
     }
     <div class="post-header-body">
       <h1 class="post-header-title">{title}</h1>
-      {description && <p class="post-header-description" set:html={description} />}
+      {
+        description && (
+          <p class="post-header-description" set:html={description} />
+        )
+      }
     </div>
-    {collection === "blog" && (
-      <div class="post-header-meta">
-        <div class="meta-item">
-          <Icon id="calendar-dots" size={16} />
-          <FormattedDate date={pubDate} />
-        </div>
-        {
-          readingTime && (
+    {
+      collection === "blog" && (
+        <div class="post-header-meta">
+          <div class="meta-item">
+            <Icon id="calendar-dots" size={16} />
+            <FormattedDate date={pubDate} />
+          </div>
+          {readingTime && (
             <div class="meta-item">
               <Icon id="clock-countdown" size={16} />
               <span>{readingTime} min read</span>
             </div>
-          )
-        }
-      </div>
-    )}
+          )}
+        </div>
+      )
+    }
   </div>
 </header>
 

@@ -24,7 +24,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     <video class="bg-video" autoplay muted loop playsinline>
       <source src="/video/glitch.mp4" type="video/mp4" />
     </video>
-    <Header />
+    <Header transparent />
     <main class="page-404">
       <div class="page-404-inner fade-up-animation">
         <div class="page-404-content">
@@ -46,12 +46,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
-  }
-
-  :global(.header.header) {
-    background: transparent;
-    backdrop-filter: none;
-    border-bottom: 1px solid var(--alt-background);
   }
 
   .bg-video {

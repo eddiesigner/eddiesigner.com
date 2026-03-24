@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 import BaseHead from "../components/shared/BaseHead.astro";
 import Header from "../components/shared/Header.astro";
 import Footer from "../components/shared/Footer.astro";
@@ -13,7 +14,12 @@ type Props = (
   | CollectionEntry<"explorations">["data"]
   | CollectionEntry<"labs">["data"]
   | CollectionEntry<"work">["data"]
-) & { body?: string; backUrl?: string; backLabel?: string; collection?: "blog" | "explorations" | "labs" | "work" };
+) & {
+  body?: string;
+  backUrl?: string;
+  backLabel?: string;
+  collection?: "blog" | "explorations" | "labs" | "work";
+};
 
 const { body, backUrl, backLabel, collection, ...data } = Astro.props;
 const { title, description = "" } = data;
@@ -28,19 +34,45 @@ const readingTime = body
     <BaseHead title={title} description={description} />
   </head>
   <body class:list={[collection]}>
-    <Header />
+    {
+      collection !== "blog" && data.heroImage && (
+        <div class="post-background">
+          <Image
+            src={data.heroImage}
+            class="post-background-image"
+            alt={title}
+            width={1200}
+            height={720}
+          />
+          <div class="post-background-gradient" />
+        </div>
+      )
+    }
+    <Header transparent={collection !== "blog"} />
     <main>
       <Wrapper>
-        <div class="post-container">
-          <PostHeader post={data} {readingTime} {backUrl} {backLabel} {collection} />
+        <div
+          class:list={["post-container", { featured: collection !== "blog" }]}
+        >
+          <PostHeader
+            post={data}
+            {readingTime}
+            {backUrl}
+            {backLabel}
+            {collection}
+          />
           <div class="post-content fade-up-animation">
             <slot />
           </div>
-          {data.tags && data.tags.length > 0 && (
-            <div class="post-tags">
-              {data.tags.map((tag) => <Tag label={tag} />)}
-            </div>
-          )}
+          {
+            data.tags && data.tags.length > 0 && (
+              <div class="post-tags">
+                {data.tags.map((tag) => (
+                  <Tag label={tag} />
+                ))}
+              </div>
+            )
+          }
         </div>
         <ContactBanner />
       </Wrapper>
@@ -75,14 +107,77 @@ const readingTime = body
     }
   }
 
+  function animateBackgroundImage() {
+    const backgroundImage = document.querySelector<HTMLElement>(
+      ".post-background-image",
+    );
+    if (!backgroundImage) return;
+
+    const initialOpacity = backgroundImage.style.opacity;
+
+    window.addEventListener("scroll", () => {
+      const imageHeight = backgroundImage.offsetHeight;
+      const scrollPos = window.scrollY;
+
+      if (scrollPos < imageHeight) {
+        const opacity = 1 - scrollPos / imageHeight;
+        const scale = 1 + scrollPos / (2 * imageHeight);
+
+        backgroundImage.style.opacity =
+          opacity <= Number(initialOpacity) ? String(opacity) : initialOpacity;
+        backgroundImage.style.transform = `scale(${scale})`;
+      }
+    });
+  }
+
   document.addEventListener("astro:page-load", initIframes);
   document.addEventListener("astro:page-load", initActiveNavLink);
+  document.addEventListener("astro:page-load", animateBackgroundImage);
 </script>
 
 <style>
+  .post-background {
+    position: absolute;
+    inset: 0;
+    height: 75dvh;
+    z-index: -1;
+    overflow: hidden;
+
+    @media (min-width: 720px) {
+      height: 100dvh;
+    }
+  }
+
+  .post-background-image {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  .post-background-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      var(--transparent) 0%,
+      var(--background) 80%
+    );
+  }
+
   .post-container {
     margin-inline: auto;
     max-width: var(--content-width);
+
+    &.featured {
+      padding-block-start: 50dvh;
+
+      @media (min-width: 720px) {
+        padding-block-start: 40dvh;
+      }
+    }
   }
 
   .post-tags {

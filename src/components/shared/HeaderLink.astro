@@ -26,10 +26,10 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
     font-weight: 500;
     height: 100%;
     padding-inline: 8px;
-    transition: color 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 
     &:not(.active):hover {
-      color: var(--light-text);
+      opacity: 0.75;
     }
 
     &.active {

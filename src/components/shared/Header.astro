@@ -1,11 +1,17 @@
 ---
 import Wrapper from "../ui/Wrapper.astro";
 import HeaderLink from "./HeaderLink.astro";
+
+interface Props {
+  transparent?: boolean;
+}
+
+const { transparent = false } = Astro.props;
 ---
 
-<header class="header">
+<header class:list={["header", "fade-down-animation", { transparent }]}>
   <Wrapper>
-    <div class="header-wrapper fade-down-animation">
+    <div class="header-wrapper">
       <a href="/" class="header-logo">
         <img src="/favicon.svg" alt="" />
         <span>Eduardo Gómez</span>
@@ -33,6 +39,11 @@ import HeaderLink from "./HeaderLink.astro";
 
     @media (min-width: 1024px) {
       --height: var(--header-height-desktop);
+    }
+
+    &.transparent {
+      background: transparent;
+      border-bottom: 1px solid var(--alt-background);
     }
   }
 

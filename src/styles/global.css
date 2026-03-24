@@ -21,6 +21,7 @@
   --alt-background: oklch(19% 0.007 109);
   --light-text: oklch(79% 0.004 286);
   --transluscent: rgba(6, 8, 4, 0.8);
+  --transparent: rgba(6, 8, 4, 0);
 }
 
 /* === FONT === */
