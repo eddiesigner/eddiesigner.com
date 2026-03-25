@@ -4,16 +4,25 @@ import type { HTMLAttributes } from "astro/types";
 interface Props extends HTMLAttributes<"a"> {
   url: string;
   label: string;
+  small?: boolean;
+  external?: boolean;
+  noIcon?: boolean;
 }
 
-const { url, label, ...attrs } = Astro.props;
+const { url, label, small, external, noIcon, ...attrs } = Astro.props;
 
 import Icon from "./Icon.astro";
 ---
 
-<a class="button" href={url} {...attrs}>
+<a
+  class:list={["button", { small }]}
+  href={url}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+  {...attrs}
+>
   {label}
-  <Icon id="arrow-right" size={20} />
+  {!noIcon && <Icon id="arrow-right" size={20} />}
 </a>
 
 <style>
@@ -51,6 +60,16 @@ import Icon from "./Icon.astro";
     &:hover {
       background-position: 0% 0%;
       transform: scale(1.04);
+    }
+
+    &.small {
+      --font-size: 0.875rem;
+      --padding: 12px 16px;
+      font-weight: 500;
+
+      @media (min-width: 1024px) {
+        --font-size: 1rem;
+      }
     }
   }
 </style>

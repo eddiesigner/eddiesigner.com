@@ -79,6 +79,11 @@ Its use is very simple, below you can see some examples of how to generate space
 
 To give you a better idea of how you could use this component in an app you can take a look at the following image where you can see highlighted in red the position and size of the different instances of the component that could be used to define the spaces between other components:
 
+<figure>
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774402019/eddiesigner.com/CleanShot-2021-12-05-at-12.28.47.png" alt="Illustration showing how flexible this component can be." />
+  <figcaption>☝️ Illustration showing how flexible this component can be.</figcaption>
+</figure>
+
 Something very important to keep in mind is that **a Spacer component is not a replacement for paddings**, if you look at the image above in more detail you will notice that I do not use this component to create the space that exists between the frame of the device and the content of the view, neither do I use it to create the space that exists between the border of the cards and its content, in those cases the padding is the best option.
 
 ## Advantages of this approach

@@ -2,13 +2,18 @@
 title: 'Real Estate Website'
 description: 'This time I decided to come up with some ideas for a real estate rental and acquisition website.'
 tags: ['figma']
-heroImage: '../../assets/img/explorations/real-estate.webp'
+heroImage: '../../assets/img/explorations/real-estate-website.webp'
 pubDate: 'Mar 05 2026'
 ---
 
 ## Why this exploration?
 
 The real estate area is very important in certain moments of a person's life, I mean, basically the companies in this sector are responsible for helping people to choose the home where they will live maybe for the rest of their lives, it seems to me that there are few types of companies that can have so much influence on the future of a person. For this reason I decided to explore with the design of a platform where people can rent or buy properties since I think that most of them are not very intuitive, are saturated with options and do not offer a good user experience, something that I consider decisive when choosing where you want to live.
+
+<figure>
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774404722/eddiesigner.com/Real-Estate-Artboard-1-min.webp" alt="☝️ Individual detail page where you can see photographs of the property and all relevant information such as price, location, description and amenities." />
+  <figcaption>☝️ Individual detail page where you can see photographs of the property and all relevant information such as price, location, description and amenities.</figcaption>
+</figure>
 
 ## The concept
 
@@ -25,6 +30,11 @@ On the detail page the first thing that stands out is the photo gallery that wil
 ## Results page
 
 For the results page I took inspiration from Airbnb's page since it seems to me that they implement certain patterns and functionalities that are very useful for this kind of platforms. Here the user can make their search more specific without feeling overwhelmed by endless options and filters, plus the map could also help them better locate the area where they would like to live.
+
+<figure>
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774404723/eddiesigner.com/Real-Estate-Artboard-2-min.webp" alt="☝️ List of results that can be refined using various filters. They can also be located using the map." />
+  <figcaption>☝️ List of results that can be refined using various filters. They can also be located using the map.</figcaption>
+</figure>
 
 ## Final thoughts
 

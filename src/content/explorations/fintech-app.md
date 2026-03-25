@@ -25,6 +25,8 @@ Specifically, my activities in the project were:
 
 Below you can see the showcase of the design where you can appreciate some screens of the application as well as some of its main functionalities.
 
+<img src="https://res.cloudinary.com/edev/image/upload/v1774412878/eddiesigner.com/Bankbase_-_Showcase.webp" alt="" class="width-full" />
+
 ## What's Next?
 
 While I was working on the design of the application, my friend was working in parallel on the development side, specifically on the backend and on the development of a working prototype for a first MVP.

@@ -41,8 +41,6 @@ const readingTime = body
             src={data.heroImage}
             class="post-background-image"
             alt={title}
-            width={1200}
-            height={720}
           />
           <div class="post-background-gradient" />
         </div>
@@ -213,6 +211,7 @@ const readingTime = body
     p,
     ul,
     ol,
+    div,
     blockquote,
     pre,
     table,
@@ -228,7 +227,7 @@ const readingTime = body
         margin-block-end: 0;
       }
 
-      & a {
+      & a:not(.button) {
         color: var(--accent);
         text-decoration: none;
 
@@ -245,15 +244,15 @@ const readingTime = body
     h4,
     h5,
     h6 {
-      --margin-block-start: 8px;
+      --padding-block-start: 8px;
       --margin-block-end: 16px;
       color: var(--foreground);
       font-weight: 500;
-      margin-block-start: var(--margin-block-start);
+      padding-block-start: var(--padding-block-start);
       margin-block-end: var(--margin-block-end);
 
       @media (min-width: 720px) {
-        --margin-block-start: 16px;
+        --padding-block-start: 16px;
         --margin-block-end: 24px;
       }
     }
@@ -383,6 +382,7 @@ const readingTime = body
       font-size: var(--font-size);
       font-weight: 500;
       line-height: 1.5;
+      text-align: center;
 
       @media (min-width: 720px) {
         --gap: 12px;

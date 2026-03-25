@@ -118,6 +118,13 @@ strong {
   }
 }
 
+.width-full {
+  margin-inline-start: calc(50% - 50vw);
+  margin-inline-end: calc(50% - 50vw);
+  width: 100vw;
+  max-width: unset;
+}
+
 .fade-down-animation {
   opacity: 0;
   animation: fadeDownAnimation 0.5s ease-in-out forwards;

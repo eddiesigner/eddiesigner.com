@@ -14,6 +14,11 @@ It is true that the university may not have a team dedicated to the maintenance 
 
 Below I show a screenshot of the current home page so you don't have to open it in the browser as it is quite slow.
 
+<figure>
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774413984/eddiesigner.com/Upemor-Inicio.webp" alt="☝️ Current design of their home page." />
+  <figcaption>☝️ Current design of their home page.</figcaption>
+</figure>
+
 The following are some of the main problems that I personally find in the current design and that should be addressed in some way:
 
 1. The home page is perhaps the most important of all and yet it does not invite students to make the decision to be part of the university, quite the contrary, and it is not easy to find relevant material because there is no information architecture.
@@ -36,6 +41,8 @@ Before making a design as such I first organised the available information based
 The goal of my proposal is to show only the information that can be useful and relevant to students in a clear and simple way by making use of well-defined sections, enough empty space to let the content breathe, a well-defined color palette and attractive images.
 
 Here is the proposal I designed:
+
+<img src="https://res.cloudinary.com/edev/image/upload/v1774413992/eddiesigner.com/Showcase.jpg" alt="" class="width-full" />
 
 ## What's Next?
 
