@@ -12,6 +12,11 @@ The [Ghost theme marketplace](https://ghost.org/themes/) has a wide variety of t
 
 The idea of creating a theme whose main content would be images seemed very interesting to me so I decided to go ahead with it. I also thought that it would be an important challenge since both the design and the code must be prepared to adapt appropriately to the wide variety of situations offered by a content management system like [Ghost](https://ghost.org/).
 
+<figure>
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774494168/eddiesigner.com/Galerie-Screen-1-min.webp" alt="☝️ Screenshots of two different content sections of an article page." />
+  <figcaption>☝️ Screenshots of two different content sections of an article page.</figcaption>
+</figure>
+
 ## Design principles
 
 To give emphasis to the images of the articles on the home page I decided to create a layout made up of tiles of different sizes resulting in a mosaic which adapts according to the width of the screen. On the article pages, images can be displayed in various types of layouts and complete galleries can also be viewed in full screen.
@@ -20,6 +25,11 @@ Typography is a crucial element of this theme, that's why I decided to use [Atki
 
 On almost every page Galerie makes intensive use of white space so that the content can breathe, and also uses a well-defined color palette to give it a touch of elegance and personality.
 
+<figure>
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774494167/eddiesigner.com/Galerie-Screen-2-min.webp" alt="☝️ Home page, article page and style guide viewed on a mobile device." />
+  <figcaption>☝️ Home page, article page and style guide viewed on a mobile device.</figcaption>
+</figure>
+
 ## Responsive design
 
 Galerie's responsive design allows it to adapt correctly to any device, no matter the size or aspect ratio, the content and images are always displayed correctly.
@@ -27,6 +37,11 @@ Galerie's responsive design allows it to adapt correctly to any device, no matte
 Other very important aspects that were taken into account at the time of design and implementation are accessibility and usability. The theme uses contrasting colors allowing for easy reading, it also makes correct use of semantic elements and the necessary attributes so that people can consume the content and navigate easily, even with a keyboard.
 
 Galerie responds and takes into account the user's preferences, and also has many optimizations for the site that uses it to load quickly and for optimal performance.
+
+<figure>
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774494167/eddiesigner.com/Galerie-Screen-3-min.webp" alt="☝️ Gallery of an article opened in full size showing some images." />
+  <figcaption>☝️ Gallery of an article opened in full size showing some images.</figcaption>
+</figure>
 
 ## Launching and learnings
 

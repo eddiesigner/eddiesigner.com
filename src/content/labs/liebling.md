@@ -14,6 +14,11 @@ This was my first time designing a Ghost theme so I had to document myself to ma
 
 Basically my goal was to design a theme that was simple, clean and minimalist, so I decided to use a friendly and easy to read typography, and I also decided to use soft and light colors.
 
+<figure>
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774488168/eddiesigner.com/Liebling-1-1.webp" alt="☝️ Design of an article header in desktop size." />
+  <figcaption>☝️ Design of an article header in desktop size.</figcaption>
+</figure>
+
 ## From a premium theme to an open source theme
 
 From the beginning my idea was to develop Liebling to be able to sell it in the theme marketplace as a premium theme, however, when I finished it I decided to do something completely different, instead I decided to release it as an open source theme so I uploaded it directly to [GitHub](https://github.com/eddiesigner/liebling) so anyone could download it for free and also they could adapt it to their needs and even create a new theme based on it.
@@ -23,6 +28,11 @@ At first I thought that my theme would go unnoticed or that maybe not many peopl
 As time went by I received emails from people thanking me for releasing Liebling as a free theme and sending me links to their publications to show me how they used it and how they had adapted it to their needs, I even realized that other developers were using it as a foundation to create other themes.
 
 By the way, even though Liebling is free, during this time I have received [multiple donations](https://ko-fi.com/eddiesigner) which have helped me to continue with the desire to maintain this project.
+
+<figure>
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774488168/eddiesigner.com/Liebling-3.webp" alt="☝️ Screenshots of different sections of the theme viewed on a mobile device." />
+  <figcaption>☝️ Screenshots of different sections of the theme viewed on a mobile device.</figcaption>
+</figure>
 
 ## Some interesting numbers
 
@@ -35,6 +45,11 @@ Next I would like to share some numbers that are worth highlighting:
 * More than [150 pull requests](https://github.com/eddiesigner/liebling/pulls?q=is:pr+is:open+sort:updated-desc)
 * More than [350 issues](https://github.com/eddiesigner/liebling/issues?q=is:issue+is:open+sort:updated-desc) created
 * More than [80 releases](https://github.com/eddiesigner/liebling/releases)
+
+<figure>
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774488168/eddiesigner.com/Liebling-2.webp" alt="☝️ A glimpse of the dark version of the theme." />
+  <figcaption>☝️ A glimpse of the dark version of the theme.</figcaption>
+</figure>
 
 ## Conclusion
 

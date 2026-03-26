@@ -12,11 +12,21 @@ In recent years, dark mode has become one of the most requested features by user
 
 The above has led to designers having to adapt their designs to support dark mode, which often means working twice as hard. Implementing dark mode in a product would seem to be a simple task but in reality it is not so much, especially if it is a sufficiently large and complex project.
 
+<figure>
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774489495/eddiesigner.com/Dark-Mode-Screen-1-min.webp" alt="☝️ Screenshot showing the user interface of the plugin." />
+  <figcaption>☝️ Screenshot showing the user interface of the plugin.</figcaption>
+</figure>
+
 ## The idea for a plugin
 
 While working on a couple of projects where I had to implement dark mode, I realized that the process of adapting a design was very time consuming and tedious. At that time I was using Sketch to design and I started looking for a plugin that would speed up the process but unfortunately I could only find a couple of options that were either too cumbersome to use or just didn't work so I decided to create my own plugin that was easy to use and that actually worked.
 
 After developing a first prototype I tested it with the designs I was working on and since it worked very well I decided to implement some adjustments and improvements in order to publish it in the Sketch plugin directory so that other designers could use it. Over time the community started using it and I received good feedback that allowed me to fix some bugs and implement new features.
+
+<figure>
+  <img src="https://camo.githubusercontent.com/edc0105e4dd5bd91139174191ba615638b7f82c570bb6a89d98a9a53f91012c9/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f656465762f696d6167652f75706c6f61642f76313538383739333732352f736b657463682d6461726b2d6d6f64652f707265766965772d6769662e676966" alt="☝️ Generating the dark version of a real design using the plugin." />
+  <figcaption>☝️ Generating the dark version of a real design using the plugin.</figcaption>
+</figure>
 
 ## Accelerating our productivity
 
