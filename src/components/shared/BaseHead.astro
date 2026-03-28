@@ -6,16 +6,19 @@ import type { ImageMetadata } from "astro";
 import FallbackImage from "../../assets/img/cover.jpg";
 import { SITE_TITLE } from "../../consts";
 import { ClientRouter } from "astro:transitions";
+import { Schema } from "astro-seo-schema";
+import type { WithContext, Thing } from "schema-dts";
 
 interface Props {
   title: string;
   description: string;
   image?: ImageMetadata;
+  schema?: WithContext<Thing>;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = FallbackImage } = Astro.props;
+const { title, description, image = FallbackImage, schema } = Astro.props;
 ---
 
 <ClientRouter />
@@ -64,3 +67,5 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
+
+{schema && <Schema item={schema} />}

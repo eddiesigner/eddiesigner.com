@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import type { WithContext, Thing } from "schema-dts";
 import { Image } from "astro:assets";
 import BaseHead from "../components/shared/BaseHead.astro";
 import Header from "../components/shared/Header.astro";
@@ -26,12 +27,51 @@ const { title, description = "" } = data;
 const readingTime = body
   ? Math.ceil(body.trim().split(/\s+/).length / 200)
   : undefined;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
+const schemaMap: Record<string, WithContext<Thing>> = {
+  blog: {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    datePublished: data.pubDate?.toISOString(),
+    url: pageUrl,
+    author: { "@type": "Person", name: "Eduardo Gómez" },
+  },
+  work: {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: title,
+    description,
+    url: pageUrl,
+    author: { "@type": "Person", name: "Eduardo Gómez" },
+  },
+  labs: {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: title,
+    description,
+    url: pageUrl,
+    author: { "@type": "Person", name: "Eduardo Gómez" },
+  },
+  explorations: {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: title,
+    description,
+    url: pageUrl,
+    author: { "@type": "Person", name: "Eduardo Gómez" },
+  },
+};
+
+const schema = collection ? schemaMap[collection] : undefined;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} {schema} image={data.heroImage ?? undefined} />
   </head>
   <body class:list={[collection]}>
     {

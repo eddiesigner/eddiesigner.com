@@ -1,0 +1,14 @@
+# Eduardo Gómez Vásquez
+
+> Frontend Engineer & UI/UX Designer with a keen eye for creating usable and engaging user interfaces that I then bring to reality through code.
+
+## Collections
+
+- [Work](/work/): Portfolio of selected design and frontend engineering projects.
+- [Labs](/labs/): Open source tools, plugins, and resources built for fun.
+- [Explorations](/explorations/): Designs, prototypes, and ideas explored for inspiration.
+- [Blog](/blog/): Articles about frontend development, design, and productivity.
+
+## About
+
+- [About](/about/): Background, bio, and links to social profiles.
