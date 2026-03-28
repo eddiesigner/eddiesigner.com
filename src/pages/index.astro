@@ -4,15 +4,16 @@ import Hero from "../components/home/Hero.astro";
 import Work from "../components/home/Work.astro";
 import ContactBanner from "../components/shared/ContactBanner.astro";
 import type { WithContext, WebSite } from "schema-dts";
+import { SITE_AUTHOR, SCHEMA_ORG } from "../consts";
 
 const schema: WithContext<WebSite> = {
-  "@context": "https://schema.org",
+  "@context": SCHEMA_ORG,
   "@type": "WebSite",
-  name: "Eduardo Gómez",
+  name: SITE_AUTHOR,
   url: Astro.site?.toString(),
   author: {
     "@type": "Person",
-    name: "Eduardo Gómez",
+    name: SITE_AUTHOR,
     jobTitle: "Frontend Engineer & UI/UX Designer",
     url: Astro.site?.toString(),
   },

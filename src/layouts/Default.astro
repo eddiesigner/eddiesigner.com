@@ -8,16 +8,18 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import type { WithContext, Thing } from "schema-dts";
 
 interface Props {
+  title?: string;
+  description?: string;
   schema?: WithContext<Thing>;
 }
 
-const { schema } = Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, schema } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} {schema} />
+    <BaseHead {title} {description} {schema} />
   </head>
   <body>
     <Header />

@@ -4,21 +4,25 @@ import Bio from "../components/about/Bio.astro";
 import Socials from "../components/about/Socials.astro";
 import ContactBanner from "../components/shared/ContactBanner.astro";
 import type { WithContext, ProfilePage } from "schema-dts";
+import { SITE_AUTHOR, SCHEMA_ORG } from "../consts";
+const ABOUT_TITLE = "About";
+const ABOUT_DESCRIPTION =
+  "Frontend Engineer & UI/UX Designer with a keen eye for creating usable and engaging user interfaces that I then bring to reality through code.";
 
 const schema: WithContext<ProfilePage> = {
-  "@context": "https://schema.org",
+  "@context": SCHEMA_ORG,
   "@type": "ProfilePage",
   url: new URL("/about/", Astro.site).toString(),
   mainEntity: {
     "@type": "Person",
-    name: "Eduardo Gómez",
+    name: SITE_AUTHOR,
     jobTitle: "Frontend Engineer & UI/UX Designer",
     url: Astro.site?.toString(),
   },
 };
 ---
 
-<Default {schema}>
+<Default title={ABOUT_TITLE} description={ABOUT_DESCRIPTION} {schema}>
   <Bio />
   <Socials />
   <ContactBanner />

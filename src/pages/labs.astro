@@ -5,6 +5,20 @@ import Heading from "../components/shared/Heading.astro";
 import LabsCard from "../components/labs/LabsCard.astro";
 import LabsEntriesSection from "../components/labs/LabsEntriesSection.astro";
 import ContactBanner from "../components/shared/ContactBanner.astro";
+import type { WithContext, CollectionPage } from "schema-dts";
+import { SCHEMA_ORG } from "../consts";
+
+const LABS_TITLE = "Labs";
+const LABS_DESCRIPTION =
+  "Laboratory with tools, plugins and other resources I build for fun. All these projects are public and open source.";
+
+const schema: WithContext<CollectionPage> = {
+  "@context": SCHEMA_ORG,
+  "@type": "CollectionPage",
+  name: LABS_TITLE,
+  description: LABS_DESCRIPTION,
+  url: new URL("/labs/", Astro.site).toString(),
+};
 
 const labsEntries = await getCollection("labs");
 const sortedLabs = labsEntries.sort(
@@ -12,11 +26,8 @@ const sortedLabs = labsEntries.sort(
 );
 ---
 
-<Default>
-  <Heading
-    title="Labs"
-    description="Laboratory with tools, plugins and other resources I build for fun.<br />All these projects are public and open source."
-  />
+<Default title={LABS_TITLE} description={LABS_DESCRIPTION} {schema}>
+  <Heading title={LABS_TITLE} description={LABS_DESCRIPTION} />
   <LabsEntriesSection>
     {
       sortedLabs.map((entry) => (

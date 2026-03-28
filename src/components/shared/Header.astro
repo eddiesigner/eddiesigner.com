@@ -1,6 +1,7 @@
 ---
 import Wrapper from "../ui/Wrapper.astro";
 import HeaderLink from "./HeaderLink.astro";
+import { SITE_AUTHOR } from "../../consts";
 
 interface Props {
   transparent?: boolean;
@@ -14,7 +15,7 @@ const { transparent = false } = Astro.props;
     <div class="header-wrapper">
       <a href="/" class="header-logo">
         <img src="/favicon.svg" alt="" />
-        <span>Eduardo Gómez</span>
+        <span>{SITE_AUTHOR}</span>
       </a>
       <nav class="header-nav" aria-label="Navigation menu">
         <HeaderLink href="/">Work</HeaderLink>

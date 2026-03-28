@@ -4,6 +4,8 @@ import Heading from "../components/shared/Heading.astro";
 import PostEntry from "../components/blog/PostEntry.astro";
 import Pagination from "../components/blog/Pagination.astro";
 import ContactBanner from "../components/shared/ContactBanner.astro";
+import type { WithContext, CollectionPage } from "schema-dts";
+import { SCHEMA_ORG } from "../consts";
 
 interface PostItem {
   url: string;
@@ -21,9 +23,17 @@ interface Props {
 }
 
 const { title, description, posts, prevUrl, nextUrl } = Astro.props;
+
+const schema: WithContext<CollectionPage> = {
+  "@context": SCHEMA_ORG,
+  "@type": "CollectionPage",
+  name: title,
+  description,
+  url: new URL(Astro.url.pathname, Astro.site).toString(),
+};
 ---
 
-<Default>
+<Default {title} {description} {schema}>
   <Heading {title} {description} />
   <div class="posts-container fade-up-animation">
     <section class="posts">

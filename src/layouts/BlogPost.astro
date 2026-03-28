@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import type { WithContext, Thing } from "schema-dts";
+import { SITE_AUTHOR, SCHEMA_ORG } from "../consts";
 import { Image } from "astro:assets";
 import BaseHead from "../components/shared/BaseHead.astro";
 import Header from "../components/shared/Header.astro";
@@ -29,39 +30,54 @@ const readingTime = body
   : undefined;
 const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 
+const heroImageObject = data.heroImage
+  ? {
+      image: {
+        "@type": "ImageObject" as const,
+        url: typeof data.heroImage === "string"
+          ? data.heroImage
+          : new URL(data.heroImage.src, Astro.site).toString(),
+      },
+    }
+  : {};
+
 const schemaMap: Record<string, WithContext<Thing>> = {
   blog: {
-    "@context": "https://schema.org",
+    "@context": SCHEMA_ORG,
     "@type": "BlogPosting",
     headline: title,
     description,
     datePublished: data.pubDate?.toISOString(),
     url: pageUrl,
-    author: { "@type": "Person", name: "Eduardo Gómez" },
+    author: { "@type": "Person", name: SITE_AUTHOR },
+    ...heroImageObject,
   },
   work: {
-    "@context": "https://schema.org",
+    "@context": SCHEMA_ORG,
     "@type": "CreativeWork",
     name: title,
     description,
     url: pageUrl,
-    author: { "@type": "Person", name: "Eduardo Gómez" },
+    author: { "@type": "Person", name: SITE_AUTHOR },
+    ...heroImageObject,
   },
   labs: {
-    "@context": "https://schema.org",
+    "@context": SCHEMA_ORG,
     "@type": "SoftwareApplication",
     name: title,
     description,
     url: pageUrl,
-    author: { "@type": "Person", name: "Eduardo Gómez" },
+    author: { "@type": "Person", name: SITE_AUTHOR },
+    ...heroImageObject,
   },
   explorations: {
-    "@context": "https://schema.org",
+    "@context": SCHEMA_ORG,
     "@type": "CreativeWork",
     name: title,
     description,
     url: pageUrl,
-    author: { "@type": "Person", name: "Eduardo Gómez" },
+    author: { "@type": "Person", name: SITE_AUTHOR },
+    ...heroImageObject,
   },
 };
 
@@ -71,7 +87,7 @@ const schema = collection ? schemaMap[collection] : undefined;
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} {schema} image={data.heroImage ?? undefined} />
+    <BaseHead title={title} description={description} {schema} image={data.heroImage ?? undefined} ogType={collection === "blog" ? "article" : "website"} />
   </head>
   <body class:list={[collection]}>
     {
