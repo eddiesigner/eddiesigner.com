@@ -22,7 +22,7 @@ const { prevUrl, nextUrl } = Astro.props;
       ) : (
         <span
           class="pagination-btn pagination-btn--disabled"
-          aria-disabled="true"
+          aria-hidden="true"
         >
           <span class="pagination-icon">
             <Icon id="arrow-left" size={16} />
@@ -42,7 +42,7 @@ const { prevUrl, nextUrl } = Astro.props;
       ) : (
         <span
           class="pagination-btn pagination-btn--disabled"
-          aria-disabled="true"
+          aria-hidden="true"
         >
           Next
           <span class="pagination-icon">

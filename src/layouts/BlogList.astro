@@ -36,7 +36,7 @@ const schema: WithContext<CollectionPage> = {
 <Default {title} {description} {schema}>
   <Heading {title} {description} />
   <div class="posts-container fade-up-animation">
-    <section class="posts">
+    <section class="posts" aria-label="Blog posts">
       {
         posts.map((post) => (
           <PostEntry

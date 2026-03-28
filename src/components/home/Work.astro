@@ -8,8 +8,8 @@ const sortedWork = workEntries.sort(
 );
 ---
 
-<section class="work fade-up-animation">
-  <h2 class="work-title">Featured Projects</h2>
+<section class="work fade-up-animation" aria-labelledby="work-heading">
+  <h2 id="work-heading" class="work-title">Featured Projects</h2>
   <div class="work-grid">
     {
       sortedWork.map((entry) => (

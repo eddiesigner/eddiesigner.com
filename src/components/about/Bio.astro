@@ -7,17 +7,17 @@ const mobile = await getImage({ src: selfieMobile, format: "webp" });
 const desktop = await getImage({ src: selfieDesktop, format: "webp" });
 ---
 
-<section class="bio">
+<section class="bio" aria-label="Biography">
   <div class="bio-inner">
     <picture class="bio-image fade-up-animation">
       <source media="(min-width: 1024px)" srcset={desktop.src} />
       <img src={mobile.src} alt="Eduardo Gómez" />
     </picture>
     <div class="bio-content fade-up-animation">
-      <h2 class="bio-heading">
+      <h1 class="bio-heading">
         Hi, I'm Eduardo, a Frontend Engineer and UI/UX Designer with over 14
         years of experience, currently based in Mexico.
-      </h2>
+      </h1>
       <div class="bio-paragraphs">
         <p class="bio-text">
           I work as a freelance frontend engineer and UI/UX designer at <a

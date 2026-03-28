@@ -21,7 +21,7 @@ const { url, image, alt, withBorder = false } = Astro.props;
     widths={[400, 800, 1200]}
     sizes="(min-width: 720px) 50vw, 100vw"
   />
-  <div class="card-overlay">
+  <div class="card-overlay" aria-hidden="true">
     <div class="card-overlay-content">
       <span>See project</span>
       <span>

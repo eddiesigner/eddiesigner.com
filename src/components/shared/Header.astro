@@ -13,9 +13,9 @@ const { transparent = false } = Astro.props;
 <header class:list={["header", "fade-down-animation", { transparent }]}>
   <Wrapper>
     <div class="header-wrapper">
-      <a href="/" class="header-logo">
+      <a href="/" class="header-logo" aria-label={SITE_AUTHOR}>
         <img src="/favicon.svg" alt="" />
-        <span>{SITE_AUTHOR}</span>
+        <span aria-hidden="true">{SITE_AUTHOR}</span>
       </a>
       <nav class="header-nav" aria-label="Navigation menu">
         <HeaderLink href="/">Work</HeaderLink>

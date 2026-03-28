@@ -28,7 +28,7 @@ const sortedExplorations = explorationsEntries.sort(
 
 <Default title={EXPLORATIONS_TITLE} description={EXPLORATIONS_DESCRIPTION} {schema}>
   <Heading title={EXPLORATIONS_TITLE} description={EXPLORATIONS_DESCRIPTION} />
-  <LabsEntriesSection>
+  <LabsEntriesSection label="Explorations projects">
     {
       sortedExplorations.map((entry) => (
         <LabsCard
