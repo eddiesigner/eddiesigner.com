@@ -15,7 +15,7 @@ It is true that the university may not have a team dedicated to the maintenance 
 Below I show a screenshot of the current home page so you don't have to open it in the browser as it is quite slow.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774413984/eddiesigner.com/Upemor-Inicio.webp" alt="☝️ Current design of their home page." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774413984/eddiesigner.com/Upemor-Inicio.webp" alt="Current design of their home page." />
   <figcaption>☝️ Current design of their home page.</figcaption>
 </figure>
 

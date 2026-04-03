@@ -11,7 +11,7 @@ Thanks to the themes I develop every now and then people who have bought them co
 For some time I had heard very good references about Astro and I really wanted to develop a project using this framework, I thought it was an excellent choice because the website should be static, fast and lightweight. In the end I agreed to work on the project and now that [it is finished](https://gdpr.fan/) I can write a little about it.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774494860/eddiesigner.com/gdpr-1.webp" alt="☝️ Individual page view of an article in desktop size." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774494860/eddiesigner.com/gdpr-1.webp" alt="Individual page view of an article in desktop size." />
   <figcaption>☝️ Individual page view of an article in desktop size.</figcaption>
 </figure>
 
@@ -30,7 +30,7 @@ One of the main requirements was that the website had to be very fast, that is t
 The size of the page when loading for the first time is about 663 KB but thanks to being hosted on a [CDN](https://bunny.net/) and compression **the transferred size is reduced to just 284 KB**, this makes it load in just one second or sometimes in half a second depending on the connection, super fast 🤯.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774494861/eddiesigner.com/gdpr-4.webp" alt="☝️ Screenshot of the PageSpeed Insights performance report." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774494861/eddiesigner.com/gdpr-4.webp" alt="Screenshot of the PageSpeed Insights performance report." />
   <figcaption>☝️ Screenshot of the PageSpeed Insights performance report.</figcaption>
 </figure>
 
@@ -43,7 +43,7 @@ As far as color is concerned I decided to use very bright and friendly colors on
 Overall the design of the website is clean and minimalist with a layout focused mainly on reading but without leaving aside some small animations and effects to bring a touch of fun to the site, after all, who said that a site of this type should be boring? 😄
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774494861/eddiesigner.com/gdpr-3.webp" alt="☝️ Different sections of the website viewed on a mobile device." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774494861/eddiesigner.com/gdpr-3.webp" alt="Different sections of the website viewed on a mobile device." />
   <figcaption>☝️ Different sections of the website viewed on a mobile device.</figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ From the very beginning Rie made a lot of emphasis that **the website should res
 At this point it is worth noting that the site does not use any analytics or advertising plugins that could compromise the privacy of users, this consequently also helped to maintain a fast loading site and improve the SEO of the site.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774494860/eddiesigner.com/gdpr-2.webp" alt="☝️ Individual page view of a chapter in desktop size." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774494860/eddiesigner.com/gdpr-2.webp" alt="Individual page view of a chapter in desktop size." />
   <figcaption>☝️ Individual page view of a chapter in desktop size.</figcaption>
 </figure>
 

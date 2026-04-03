@@ -13,7 +13,7 @@ This is the continuation of [the design series I started a few days ago](https:/
 Personally I can say that I use this kind of apps very often (maybe more than I should 😅) as I find it very handy, however, I have noticed that the user experience could be much better. In general the applications do their job but since there is not much competition they don't seem to care about offering a better quality product, that's why I decided to elaborate a concept of what I would like to see in this kind of applications.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774409549/eddiesigner.com/Food-App-Artboard-1-min.webp" alt="☝️ Relevant restaurants and food options on the home screen, useful information in the order tracking and restaurant details at a glance." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774409549/eddiesigner.com/Food-App-Artboard-1-min.webp" alt="Relevant restaurants and food options on the home screen, useful information in the order tracking and restaurant details at a glance." />
   <figcaption>☝️ Relevant restaurants and food options on the home screen, useful information in the order tracking and restaurant details at a glance.</figcaption>
 </figure>
 
@@ -24,7 +24,7 @@ The idea is that from the moment you open the app, you have a wide variety of op
 Another important aspect of the design is that the user can have easy and direct access to relevant options such as filters, search, product basket and notifications while preparing to place an order. Once the order is on its way, the user can check at any time and in real time the status of the order, the delivery driver's route and more relevant information such as waiting time, delivery driver information and order details, all this from a clear and easy to use interface.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774409549/eddiesigner.com/Food-App-Artboard-2-min.webp" alt="☝️ Complete view of a restaurant detail screen, list of restaurants and order tracking." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774409549/eddiesigner.com/Food-App-Artboard-2-min.webp" alt="Complete view of a restaurant detail screen, list of restaurants and order tracking." />
   <figcaption>☝️ Complete view of a restaurant detail screen, list of restaurants and order tracking.</figcaption>
 </figure>
 

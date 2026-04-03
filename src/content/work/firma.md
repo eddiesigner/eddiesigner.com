@@ -13,7 +13,7 @@ Thanks to the startup boom of the last few years, the marketing efforts of start
 In recent years more and more people and companies have turned to [Ghost](https://ghost.org/) as a great alternative to Wordpress to create and maintain their own blogs, for this reason I decided to create a new theme for Ghost that will focus mainly on startups and companies with online presence. Firma is my proposal for this kind of companies to offer their visitors a comfortable way to consume their content.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774490847/eddiesigner.com/Firma-Screen-1-min.webp" alt="☝️ Various ways to display posts on the home page." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774490847/eddiesigner.com/Firma-Screen-1-min.webp" alt="Various ways to display posts on the home page." />
   <figcaption>☝️ Various ways to display posts on the home page.</figcaption>
 </figure>
 
@@ -28,7 +28,7 @@ Firma was designed with the following objectives in mind:
 5. Be extremely fast so that the user can see the content as quickly as possible.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774490847/eddiesigner.com/Firma-Screen-2-min.webp" alt="☝️ List of articles, article page and author page viewed on a mobile device." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774490847/eddiesigner.com/Firma-Screen-2-min.webp" alt="List of articles, article page and author page viewed on a mobile device." />
   <figcaption>☝️ List of articles, article page and author page viewed on a mobile device.</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ Firma was designed with the following objectives in mind:
 [Firma has been available](https://ghost.org/themes/firma/) in the Ghost themes marketplace for a year and so far it has been my best selling theme, there is no doubt that the demand for this type of products exists and continues to increase day by day. During this time I have also received very good comments and reviews from users who have purchased it, which I am very grateful and has motivated me to keep the theme updated during this time. I have also had the opportunity to see the theme working on multiple blogs of different types of companies and I find it amazing that I have been somehow part of their marketing efforts and increasing their online presence.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774490847/eddiesigner.com/Firma-Screen-3-min.webp" alt="☝️ Dark version of Firma viewed in a large window size." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774490847/eddiesigner.com/Firma-Screen-3-min.webp" alt="Dark version of Firma viewed in a large window size." />
   <figcaption>☝️ Dark version of Firma viewed in a large window size.</figcaption>
 </figure>
 

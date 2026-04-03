@@ -11,7 +11,7 @@ pubDate: 'Mar 03 2026'
 Since I recently subscribed to Figma's paid plan, I decided to start creating designs that I've had in my head for some time. The first of these concepts is that of a mobile music application. It should be noted that these are not complete designs, they are just ideas that occur to me suddenly and on which I work in my spare time, although it would be nice if someday these can be brought to reality in a real product or that can serve as inspiration to someone else ;)
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774410051/eddiesigner.com/Music-App-Artboard-1-min.webp" alt="☝️ Close-up of the music player interface, album tracks and artist profile design." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774410051/eddiesigner.com/Music-App-Artboard-1-min.webp" alt="Close-up of the music player interface, album tracks and artist profile design." />
   <figcaption>☝️ Close-up of the music player interface, album tracks and artist profile design.</figcaption>
 </figure>
 
@@ -20,7 +20,7 @@ Since I recently subscribed to Figma's paid plan, I decided to start creating de
 The goal of this design is to turn the music listening experience into something much more personal and emotional, that what you listen to is able to alter even the appearance of the application and that it subtly adapts according to what you are listening to at any given moment. Album covers and artist photos play a very important role as these are what define the look and feel of the application, even the controls would be adapted to reflect the predominant colors.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774410051/eddiesigner.com/Music-App-Artboard-2-min.webp" alt="☝️ Visual representation of how the application design looks on a real device." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774410051/eddiesigner.com/Music-App-Artboard-2-min.webp" alt="Visual representation of how the application design looks on a real device." />
   <figcaption>☝️ Visual representation of how the application design looks on a real device.</figcaption>
 </figure>
 

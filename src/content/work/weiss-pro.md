@@ -13,7 +13,7 @@ As you can read in the title of this section, [Weiss Pro](https://ghost.org/them
 The main difference between Weiss Pro and my previous free theme is that this one has support for Members which is a feature that allows creators to monetize their content based on a subscription model, among other additional features. Weiss Pro has a more polished and neat design, also the source code is better organized and cleaner.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774490399/eddiesigner.com/Weiss-Pro-Screen-1-min.webp" alt="☝️ Three screens showing different ways of presenting the information of an article." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774490399/eddiesigner.com/Weiss-Pro-Screen-1-min.webp" alt="Three screens showing different ways of presenting the information of an article." />
   <figcaption>☝️ Three screens showing different ways of presenting the information of an article.</figcaption>
 </figure>
 
@@ -24,7 +24,7 @@ From the beginning I was clear that I wanted Weiss Pro to have a sober and elega
 The theme has a light and a dark mode, in both cases I use colors that contrast enough so that the content can be read without problems for most people. The white space around the content is abundant so that it can breathe and be digested more easily, also the geometric figures used give it an interesting touch and are intended to attract the user's attention.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774490399/eddiesigner.com/Weiss-Pro-Screen-2-min.webp" alt="☝️ Three different screens of the theme with dark mode activated." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774490399/eddiesigner.com/Weiss-Pro-Screen-2-min.webp" alt="Three different screens of the theme with dark mode activated." />
   <figcaption>☝️ Three different screens of the theme with dark mode activated.</figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ Weiss Pro focuses on publications that publish content with a more or less serio
 So far I have had the opportunity to visit multiple blogs that use my theme and I have noticed that most of them are part of the groups I mentioned in the previous paragraph so I think I was not too far from reality to think that this design would attract the attention of that audience.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774490399/eddiesigner.com/Weiss-Pro-Screen-3-min.webp" alt="☝️ Design of the header of an article page." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774490399/eddiesigner.com/Weiss-Pro-Screen-3-min.webp" alt="Design of the header of an article page." />
   <figcaption>☝️ Design of the header of an article page.</figcaption>
 </figure>
 

@@ -15,7 +15,7 @@ This was my first time designing a Ghost theme so I had to document myself to ma
 Basically my goal was to design a theme that was simple, clean and minimalist, so I decided to use a friendly and easy to read typography, and I also decided to use soft and light colors.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774488168/eddiesigner.com/Liebling-1-1.webp" alt="☝️ Design of an article header in desktop size." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774488168/eddiesigner.com/Liebling-1-1.webp" alt="Design of an article header in desktop size." />
   <figcaption>☝️ Design of an article header in desktop size.</figcaption>
 </figure>
 
@@ -30,7 +30,7 @@ As time went by I received emails from people thanking me for releasing Liebling
 By the way, even though Liebling is free, during this time I have received [multiple donations](https://ko-fi.com/eddiesigner) which have helped me to continue with the desire to maintain this project.
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774488168/eddiesigner.com/Liebling-3.webp" alt="☝️ Screenshots of different sections of the theme viewed on a mobile device." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774488168/eddiesigner.com/Liebling-3.webp" alt="Screenshots of different sections of the theme viewed on a mobile device." />
   <figcaption>☝️ Screenshots of different sections of the theme viewed on a mobile device.</figcaption>
 </figure>
 
@@ -47,7 +47,7 @@ Next I would like to share some numbers that are worth highlighting:
 * More than [80 releases](https://github.com/eddiesigner/liebling/releases)
 
 <figure>
-  <img src="https://res.cloudinary.com/edev/image/upload/v1774488168/eddiesigner.com/Liebling-2.webp" alt="☝️ A glimpse of the dark version of the theme." />
+  <img src="https://res.cloudinary.com/edev/image/upload/v1774488168/eddiesigner.com/Liebling-2.webp" alt="A glimpse of the dark version of the theme." />
   <figcaption>☝️ A glimpse of the dark version of the theme.</figcaption>
 </figure>
 
