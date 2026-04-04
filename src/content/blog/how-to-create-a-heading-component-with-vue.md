@@ -2,7 +2,7 @@
 title: 'How to create a Heading component with Vue'
 description: 'Creating a Heading component can be a bit tricky, this post explains how to create it using Vue in a more efficient way.'
 pubDate: 'Dec 03 2021'
-tags: ['frontend', 'vue']
+tags: ['frontend', 'vue', 'javascript']
 heroImage: ''
 ---
 

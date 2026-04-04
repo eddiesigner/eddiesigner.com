@@ -208,6 +208,16 @@ const tag = rawTag
       --font-size: 1.25rem;
       --line-height: 1.5;
     }
+
+    & :global(a) {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      transition: opacity 0.2s ease-in-out;
+
+      &:global(:hover) {
+        opacity: 0.8;
+      }
+    }
   }
 
   .post-header-meta {

@@ -1,7 +1,7 @@
 ---
 title: 'Fintech Mobile App'
 description: 'Visual exploration, brand design proposal and prototype for a mobile application in the financial sector.'
-tags: ['figma']
+tags: ['figma', 'design']
 heroImage: '../../assets/img/explorations/fintech-app.webp'
 pubDate: 'Mar 02 2026'
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'Real Estate Website'
 description: 'This time I decided to come up with some ideas for a real estate rental and acquisition website.'
-tags: ['figma']
+tags: ['figma', 'design']
 heroImage: '../../assets/img/explorations/real-estate-website.webp'
 pubDate: 'Mar 05 2026'
 ---

@@ -34,9 +34,10 @@ const heroImageObject = data.heroImage
   ? {
       image: {
         "@type": "ImageObject" as const,
-        url: typeof data.heroImage === "string"
-          ? data.heroImage
-          : new URL(data.heroImage.src, Astro.site).toString(),
+        url:
+          typeof data.heroImage === "string"
+            ? data.heroImage
+            : new URL(data.heroImage.src, Astro.site).toString(),
       },
     }
   : {};
@@ -87,7 +88,13 @@ const schema = collection ? schemaMap[collection] : undefined;
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} {schema} image={data.heroImage ?? undefined} ogType={collection === "blog" ? "article" : "website"} />
+    <BaseHead
+      title={title}
+      description={description}
+      {schema}
+      image={data.heroImage ?? undefined}
+      ogType={collection === "blog" ? "article" : "website"}
+    />
   </head>
   <body class:list={[collection]}>
     {
@@ -285,11 +292,12 @@ const schema = collection ? schemaMap[collection] : undefined;
 
       & a:not(.button) {
         color: var(--accent);
-        text-decoration: none;
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        transition: opacity 0.2s ease-in-out;
 
         &:hover {
-          text-decoration: underline;
-          text-decoration-style: dotted;
+          opacity: 0.8;
         }
       }
     }

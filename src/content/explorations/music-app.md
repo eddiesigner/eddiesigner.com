@@ -1,7 +1,7 @@
 ---
 title: 'Music Mobile App'
 description: 'The beginning of a series of design concepts that I will be working on from now on.'
-tags: ['figma']
+tags: ['figma', 'design']
 heroImage: '../../assets/img/explorations/music-mobile-app.webp'
 pubDate: 'Mar 03 2026'
 ---
