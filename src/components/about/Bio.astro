@@ -15,8 +15,8 @@ const desktop = await getImage({ src: selfieDesktop, format: "webp" });
     </picture>
     <div class="bio-content fade-up-animation">
       <h1 class="bio-heading">
-        Hi, I'm Eduardo, a Frontend Engineer and UI/UX Designer with over 14
-        years of experience, currently based in Mexico.
+        Hi, I'm Eduardo, a Frontend Engineer and UI/UX Designer with 15 years of
+        experience, currently based in Mexico.
       </h1>
       <div class="bio-paragraphs">
         <p class="bio-text">
@@ -131,12 +131,21 @@ const desktop = await getImage({ src: selfieDesktop, format: "webp" });
   .bio-text {
     --font-size: 1rem;
     font-size: var(--font-size);
-    font-weight: 500;
     line-height: 1.7;
     color: var(--light-text);
 
     @media (min-width: 1024px) {
       --font-size: 1.25rem;
+    }
+
+    a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      transition: opacity 0.2s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 </style>
