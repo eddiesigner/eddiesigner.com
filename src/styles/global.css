@@ -95,6 +95,10 @@ strong {
   white-space: nowrap;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
