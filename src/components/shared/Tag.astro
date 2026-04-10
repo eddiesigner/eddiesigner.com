@@ -8,7 +8,7 @@ const { label, url } = Astro.props;
 const href = url ?? `/tag/${label.toLowerCase().replace(/\s+/g, "-")}/`;
 ---
 
-<a class="tag" href={href}>{label}</a>
+<a class="tag" href={href}>{label.toLowerCase()}</a>
 
 <style>
   .tag {

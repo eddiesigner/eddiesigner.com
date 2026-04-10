@@ -113,7 +113,11 @@ const schema = collection ? schemaMap[collection] : undefined;
     <main>
       <Wrapper>
         <div
-          class:list={["post-container", { featured: collection !== "blog" }]}
+          class:list={[
+            "post-container",
+            "fade-up-animation",
+            { featured: collection !== "blog" },
+          ]}
         >
           <PostHeader
             post={data}
@@ -122,7 +126,7 @@ const schema = collection ? schemaMap[collection] : undefined;
             {backLabel}
             {collection}
           />
-          <div class="post-content fade-up-animation">
+          <div class="post-content">
             <slot />
           </div>
           {
